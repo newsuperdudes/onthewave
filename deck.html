@@ -1,0 +1,1676 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinsPaid × Superdudes — Greece '26</title>
+<link rel="stylesheet" href="styles.css">
+<script src="deck-stage.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  /* slide-specific overrides */
+  body { background: #0a0a08; }
+
+  /* full-bleed background image */
+  .bg-fill {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .bg-tint::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(245,239,228,0) 40%, rgba(10,10,8,0.55) 100%);
+    z-index: 1;
+  }
+  .slide-content { position: relative; z-index: 2; height: 100%; width: 100%; }
+
+  /* divider slides */
+  .divider-slide {
+    background: var(--ink-0);
+    color: var(--plaster-0);
+  }
+
+  /* status pill */
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 100px;
+    border: 1px solid currentColor;
+  }
+  .pill.confirmed { color: #1f6b3a; background: rgba(40,180,90,0.08); }
+  .pill.rfp       { color: #8a5a00; background: rgba(220,160,40,0.10); }
+  .pill.option    { color: #1d4f6e; background: rgba(40,120,180,0.08); }
+  .pill.backup    { color: var(--ink-mute); background: rgba(0,0,0,0.04); }
+  .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+</style>
+</head>
+<body>
+
+<deck-stage>
+
+  <!-- ============================================ -->
+  <!-- 01 — COVER                                   -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="01 Cover">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/23-collage-offsite-grc.png" alt="">
+    <!-- very subtle scrim — keep the collage visible -->
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(245,239,228,0.10) 0%, rgba(245,239,228,0.0) 30%, rgba(245,239,228,0.0) 70%, rgba(245,239,228,0.18) 100%);"></div>
+    <div class="slide-content">
+      <div class="chrome-top">
+        <span><span class="dot"></span>SUPERDUDES ⨯ COINSPAID · OFFSITE 2026 · DRAFT v01</span>
+        <span>REF · SD/26/GR</span>
+      </div>
+
+      <!-- TOP: kicker masthead, biased right over the light plaster void -->
+      <div style="position: absolute; left: 64%; top: 175px; transform: translateX(-50%); display: flex; align-items: center; gap: 18px;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime); display: inline-block;"></span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.32em; color: rgba(26,22,18,0.78); text-transform: uppercase;">Greece, OCT '26</span>
+      </div>
+
+      <!-- HERO: centered lockup in the plaster void -->
+      <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 0; text-align: center; width: 100%; padding: 0 80px;">
+
+        <!-- DOMINANT — torn-paper sticker. Asset is 1536×1024 but only the upper portion (y≈14%→66%) is paper; size the image so paper-region matches our box height, then center horizontally. -->
+        <div style="position: relative; width: 1280px; max-width: 94vw; height: 380px; transform: rotate(-1.2deg); filter: drop-shadow(0 14px 28px rgba(0,0,0,0.20)); overflow: hidden;">
+          <!-- image at full container width (787px tall); shift down so paper-center (40% of asset) aligns with box-center -->
+          <img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/torn-paper-tape-strip.png" alt="" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, calc(-50% + 92px)); width: 100%; height: auto; pointer-events: none; display: block;">
+          <!-- text centered inside the visible paper region; nudged slightly down and left -->
+          <div style="position: absolute; left: 0; right: 0; top: 50%; transform: translate(-12px, calc(-50% + 38px)); display: flex; align-items: center; justify-content: center; gap: 44px; flex-wrap: nowrap; padding: 0 110px;">
+            <div style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 60px; line-height: 0.9; letter-spacing: -0.035em; color: #1a1612; text-transform: uppercase;">Superdudes</div>
+            <div style="font-family: 'Inter', sans-serif; font-weight: 200; font-size: 56px; line-height: 0.9; color: rgba(26,22,18,0.4);">×</div>
+            <img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/coinspaid-logo.png" alt="CoinsPaid" style="height: 170px; width: auto; display: block;">
+          </div>
+        </div>
+
+        <!-- SUBLIME — big italic On the wave., ONE LINE, with single animated wave line -->
+        <div style="margin-top: 36px; display: flex; flex-direction: column; align-items: center; width: 100%;">
+          <h1 style="font-family: 'Inter', sans-serif; font-weight: 900; font-style: italic; font-size: 280px; line-height: 0.9; letter-spacing: -0.05em; color: #1a1612; margin: 0; text-transform: uppercase; white-space: nowrap; text-shadow: 0 2px 12px rgba(245,239,228,0.5);">
+            <span style="display: inline-block; position: relative;">
+              <span style="position: absolute; left: -10px; right: -10px; top: 38%; bottom: 8%; background: var(--lime); z-index: 0; transform: skewX(-8deg);"></span>
+              <span style="position: relative; z-index: 1;">On the wave</span>
+            </span><span style="color: rgba(26,22,18,0.45); font-style: normal;">.</span>
+          </h1>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>SD/26/GR · ON THE WAVE</span>
+        <span>PAGE 01</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 02 — TEAM                                    -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="02 Olympus">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/26-wood-table-shadow.png" alt="" style="opacity: 0.85;">
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(245,239,228,0.35), rgba(245,239,228,0.55));"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>02 · OLYMPUS</span>
+        <span>SUPERDUDES · ATHENS WING</span>
+      </div>
+
+      <div style="margin-top: 80px; display: flex; align-items: baseline; gap: 28px;">
+        <span class="numarker">02</span>
+        <h2 class="title-xxl" style="font-size: 200px; color: #1a1612;">
+          <span style="background: linear-gradient(180deg, transparent 56%, var(--lime) 56%, var(--lime) 92%, transparent 92%); padding: 0 18px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">Olympus.</span>
+        </h2>
+      </div>
+      <div style="margin-top: 32px; display: inline-flex; align-items: center; gap: 18px; padding: 10px 20px; background: rgba(26,22,18,0.92); color: var(--plaster-0);">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--lime); display: inline-block;"></span>
+        <span style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: 0.01em; line-height: 1;">Greek gods of unhinged creative & production.</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 36px 24px; margin-top: 100px; padding: 20px 0;">
+        <!-- crew polaroid -->
+        <div class="polaroid" style="--tilt: -2.5deg;">
+          <span class="polaroid-tape"></span>
+          <div class="polaroid-photo"><img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/team/vlad.png" alt="Vlad"></div>
+          <div class="polaroid-cap">
+            <div class="polaroid-name">Vlad</div>
+            <div class="polaroid-role">Head of Special Projects</div>
+          </div>
+          <div class="polaroid-ref">SD/01</div>
+        </div>
+        <div class="polaroid" style="--tilt: 1.8deg;">
+          <span class="polaroid-tape"></span>
+          <div class="polaroid-photo"><img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/team/nik.png" alt="Nik"></div>
+          <div class="polaroid-cap">
+            <div class="polaroid-name">Nik</div>
+            <div class="polaroid-role">Account Director</div>
+          </div>
+          <div class="polaroid-ref">SD/02</div>
+        </div>
+        <div class="polaroid" style="--tilt: -1.2deg;">
+          <span class="polaroid-tape"></span>
+          <div class="polaroid-photo"><img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/team/dertev.png" alt="Töma"></div>
+          <div class="polaroid-cap">
+            <div class="polaroid-name">Töma</div>
+            <div class="polaroid-role">CEO · Creative Director</div>
+          </div>
+          <div class="polaroid-ref">SD/03</div>
+        </div>
+        <div class="polaroid" style="--tilt: 2.4deg;">
+          <span class="polaroid-tape"></span>
+          <div class="polaroid-photo"><img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/team/lisa.png" alt="Lisa"></div>
+          <div class="polaroid-cap">
+            <div class="polaroid-name">Lisa</div>
+            <div class="polaroid-role">Ops &amp; Docs</div>
+          </div>
+          <div class="polaroid-ref">SD/04</div>
+        </div>
+        <div class="polaroid" style="--tilt: -1.8deg;">
+          <span class="polaroid-tape"></span>
+          <div class="polaroid-photo"><img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/team/david.png" alt="David"></div>
+          <div class="polaroid-cap">
+            <div class="polaroid-name">David</div>
+            <div class="polaroid-role">Legal</div>
+          </div>
+          <div class="polaroid-ref">SD/05</div>
+        </div>
+        <div class="polaroid" style="--tilt: 2.2deg;">
+          <span class="polaroid-tape"></span>
+          <div class="polaroid-photo"><img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/team/sasha.png" alt="Sasha"></div>
+          <div class="polaroid-cap">
+            <div class="polaroid-name">Sasha</div>
+            <div class="polaroid-role">Neural Creator</div>
+          </div>
+          <div class="polaroid-ref">SD/06</div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>SD/CREW · 6 HEADS · 12 HANDS</span>
+        <span>02</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 02D — ON THE WAVE (concept rationale, light) -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="02D Why" style="background: #f0f0f0;">
+    <!-- sea backdrop, full color -->
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/02-sail-sea.png" alt="">
+    <!-- super-light scrim only for chrome legibility -->
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08) 40%, rgba(255,255,255,0.28));"></div>
+
+    <div class="slide-content" style="position: relative; height: 100%; width: 100%; color: #000;">
+
+      <!-- chrome top -->
+      <div style="position: absolute; top: 36px; left: 64px; right: 64px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(0,0,0,0.65);">
+        <span>SD-02D // CONCEPT_RATIONALE</span>
+        <span>WHY ON THE WAVE</span>
+      </div>
+
+      <!-- left rail rotated ref -->
+      <div style="position: absolute; left: 64px; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: left center; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.32em; color: rgba(0,0,0,0.45); text-transform: uppercase; white-space: nowrap;">
+        REF_SD/26/GR · WAVE_FORM
+      </div>
+
+      <!-- main: HUGE headline + 3 reasons -->
+      <div style="position: absolute; left: 140px; right: 140px; top: 130px; bottom: 110px; display: flex; flex-direction: column; justify-content: space-between;">
+
+        <!-- top eyebrow -->
+        <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(0,0,0,0.6);">
+          [ SD-WHY ]
+        </div>
+
+        <!-- WHY headline + sticker, reads as a rebus: "WHY [🏄] ?" → ON THE WAVE -->
+        <div style="position: relative; display: flex; align-items: center; justify-content: flex-start; gap: 28px;">
+          <h2 style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 200px; line-height: 0.84; letter-spacing: -0.05em; text-transform: uppercase; margin: 0; color: #000;">
+            WHY
+          </h2>
+
+          <!-- holographic surfer sticker = the rebus answer -->
+          <div style="position: relative; flex-shrink: 0; width: 360px; height: 360px; transform: rotate(6deg); margin: 0 -10px;">
+            <img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/stickers/surfer-holo.png" alt="surfer holographic sticker" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 22px 38px rgba(0,0,0,0.22));">
+          </div>
+
+          <h2 style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 200px; line-height: 0.84; letter-spacing: -0.05em; text-transform: uppercase; margin: 0; color: #000;">
+            ?
+          </h2>
+        </div>
+
+        <!-- 3 reasons in a row, slash-divided -->
+        <div style="display: grid; grid-template-columns: 1fr 1px 1fr 1px 1fr; gap: 48px; align-items: stretch;">
+
+          <!-- reason 01 -->
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.32em; color: rgba(0,0,0,0.4); text-transform: uppercase; margin-bottom: 16px;">
+              [ 01 // VIBE-FIRST ]
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 36px; line-height: 1.0; letter-spacing: -0.01em; text-transform: uppercase; color: #000;">
+              Don't invent<br>the vibe.<br>Ride it.
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 0.06em; line-height: 1.5; margin-top: 18px; text-transform: uppercase;">
+              <span style="background: var(--lime); color: #1a1612; padding: 6px 10px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">The concept supports the trip — never replaces it.</span>
+            </div>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.12);"></div>
+
+          <!-- reason 02 -->
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.32em; color: rgba(0,0,0,0.4); text-transform: uppercase; margin-bottom: 16px;">
+              [ 02 // LITERAL ]
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 36px; line-height: 1.0; letter-spacing: -0.01em; text-transform: uppercase; color: #000;">
+              The sea is<br>literally<br>around.
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 0.06em; line-height: 1.5; margin-top: 18px; text-transform: uppercase;">
+              <span style="background: var(--lime); color: #1a1612; padding: 6px 10px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">Greece. October. Aegean. The line writes itself.</span>
+            </div>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.12);"></div>
+
+          <!-- reason 03 -->
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.32em; color: rgba(0,0,0,0.4); text-transform: uppercase; margin-bottom: 16px;">
+              [ 03 // CREW ]
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 36px; line-height: 1.0; letter-spacing: -0.01em; text-transform: uppercase; color: #000;">
+              Balance.<br>Hold the<br>crew up.
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 0.06em; line-height: 1.5; margin-top: 18px; text-transform: uppercase;">
+              <span style="background: var(--lime); color: #1a1612; padding: 6px 10px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">On a wave you don't splash — you stand together, catch the moment.</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- chrome bottom -->
+      <div style="position: absolute; bottom: 36px; left: 64px; right: 64px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(0,0,0,0.5);">
+        <span>VIBE / LITERAL / CREW · ALL THREE AT ONCE</span>
+        <span>02D</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 02C — PAIR OF WORDS (Superdudes-style)       -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="02C On the look">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/09-stone-tiles.png" alt="">
+    <!-- soft scrim only on text bands so background stays original -->
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(255,255,255,0.0) 30%, rgba(255,255,255,0.0) 70%, rgba(255,255,255,0.0) 100%);"></div>
+
+    <div class="slide-content" style="position: relative; height: 100%; width: 100%; color: #1a1612;">
+
+      <!-- chrome top: Superdudes protocol style -->
+      <div style="position: absolute; top: 36px; left: 64px; right: 64px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(26,22,18,0.7);">
+        <span style="background: var(--lime); color: #1a1612; padding: 5px 10px;">SD-02C // ON_THE_LOOK</span>
+        <span></span>
+      </div>
+
+      <!-- left rail: ref code -->
+      <div style="position: absolute; left: 64px; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: left center; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.32em; color: rgba(26,22,18,0.55); text-transform: uppercase; white-space: nowrap;">
+        REF_SD/26/GR · ANTI-DIGITAL UNIT
+      </div>
+
+      <!-- center: monolithic statement, two halves separated by slash -->
+      <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(1500px, 88%);">
+
+        <!-- the formula, OLD / NEW -->
+        <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 40px; align-items: center;">
+
+          <!-- OLD half -->
+          <div style="text-align: right;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.32em; color: rgba(26,22,18,0.55); text-transform: uppercase; margin-bottom: 14px;">
+              [ OLD // SD-A ]
+            </div>
+            <h2 style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 96px; line-height: 0.86; letter-spacing: -0.025em; text-transform: uppercase; margin: 0; color: #1a1612; text-shadow: 0 2px 16px rgba(255,255,255,0.45);">
+              ANCIENT<br>BEAUTY
+            </h2>
+          </div>
+
+          <!-- divider: holographic slash -->
+          <div style="position: relative; display: flex; align-items: center; justify-content: center; width: 168px; height: 168px;">
+            <div class="holo" style="width: 168px; height: 168px; transform: rotate(-6deg);">
+              <div class="holo-inner" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.32em; color: rgba(0,0,0,0.6); text-transform: uppercase;">FORMULA</div>
+                <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 78px; line-height: 1; color: #000; margin-top: 2px;">×</div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.32em; color: rgba(0,0,0,0.6); text-transform: uppercase;">GR/26</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NEW half -->
+          <div style="text-align: left;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.32em; color: rgba(26,22,18,0.55); text-transform: uppercase; margin-bottom: 14px;">
+              [ NEW // SD-B ]
+            </div>
+            <h2 style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 96px; line-height: 0.86; letter-spacing: -0.025em; text-transform: uppercase; margin: 0; color: #1a1612; text-shadow: 0 2px 16px rgba(255,255,255,0.45);">
+              HOLOGRAPHIC<br>STICKERS
+            </h2>
+          </div>
+
+        </div>
+
+        <!-- formula pairs under the main equation -->
+        <div style="margin: 44px auto 0; padding-top: 22px; border-top: 1px solid rgba(26,22,18,0.18); display: flex; justify-content: center; align-items: center; gap: 36px; flex-wrap: nowrap; max-width: 1100px;">
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; color: #1a1612;">
+            MARBLE <span style="color: rgba(26,22,18,0.5); font-weight: 400; margin: 0 4px;">×</span> PIXEL
+          </div>
+          <span style="width: 3px; height: 3px; background: rgba(26,22,18,0.4); border-radius: 50%; flex-shrink: 0;"></span>
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; color: #1a1612;">
+            BUST <span style="color: rgba(26,22,18,0.5); font-weight: 400; margin: 0 4px;">×</span> HOLOGRAM
+          </div>
+          <span style="width: 3px; height: 3px; background: rgba(26,22,18,0.4); border-radius: 50%; flex-shrink: 0;"></span>
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; color: #1a1612;">
+            CHOIR <span style="color: rgba(26,22,18,0.5); font-weight: 400; margin: 0 4px;">×</span> DROP
+          </div>
+          <span style="width: 3px; height: 3px; background: rgba(26,22,18,0.4); border-radius: 50%; flex-shrink: 0;"></span>
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; color: #1a1612;">
+            OLIVE <span style="color: rgba(26,22,18,0.5); font-weight: 400; margin: 0 4px;">×</span> CODE
+          </div>
+        </div>
+
+      </div>
+
+      <!-- chrome bottom: protocol footer -->
+      <div style="position: absolute; bottom: 36px; left: 64px; right: 64px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(26,22,18,0.7);">
+        <span>OFFLINE-FIRST / PUNK-SMART / CULTURE DRIVEN</span>
+        <span>02C</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 03 — DIVIDER · WHERE WE GO                   -->
+  <!-- ============================================ -->
+  <section class="slide divider-slide" data-screen-label="03 Divider — Where">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/16-coast-road.png" alt="">
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(10,10,8,0.55), rgba(10,10,8,0.75));"></div>
+    <div class="slide-content pad-lg">
+      <div class="chrome-top" style="color: rgba(245,239,228,0.6);">
+        <span><span class="dot"></span>CHAPTER 01</span>
+        <span>WHERE</span>
+      </div>
+
+      <div style="position: absolute; left: 140px; bottom: 200px;">
+        <div class="kicker" style="color: rgba(245,239,228,0.6); margin-bottom: 32px;">
+          Chapter 01 / 04
+        </div>
+        <h2 class="title-xl" style="color: var(--plaster-0);">
+          Where we<br>actually go.
+        </h2>
+      </div>
+
+      <div style="position: absolute; right: 140px; top: 50%; transform: translateY(-50%);">
+        <div class="holo" style="width: 220px; height: 220px;">
+          <div class="holo-inner">
+            CH·01<br>WHERE<br>WE·GO
+          </div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom" style="color: rgba(245,239,228,0.6);">
+        <span>NEXT · GEO ARGUMENT · HOTEL SHORTLIST</span>
+        <span>03</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 04 — GREECE MAP / GEO                        -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="04 Greece map">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/04-sea-view.png" alt="">
+    <!-- minimal scrim only for chrome legibility, photo stays in full color -->
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.22));"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>04 · GEO</span>
+        <span>OCT 2026 · DIRECT FLIGHTS</span>
+      </div>
+
+      <!-- 2-col layout: left tablet (bigger), right title -->
+      <div style="display: grid; grid-template-columns: 1.55fr 1fr; gap: 40px; margin-top: 64px; align-items: center;">
+
+        <!-- LEFT — marble tablet with hubs table -->
+        <div style="position: relative; width: 100%; aspect-ratio: 1500 / 1000; background-image: url('https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/stickers/marble-tablet-hubs.png'); background-size: 100% 100%; background-repeat: no-repeat; filter: drop-shadow(0 22px 36px rgba(0,0,0,0.20));">
+          <div style="position: absolute; inset: 36% 28% 12% 23%; display: flex; flex-direction: column; justify-content: flex-start; gap: 14px;">
+
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 6px; border-bottom: 1px solid rgba(26,22,18,0.22);">
+              <div>
+                <div style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.01em; color: #1a1612; line-height: 1;">ATH · Athens</div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,22,18,0.6); margin-top: 4px;">Athenian Riviera</div>
+              </div>
+              <div style="text-align: right;">
+                <div style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.01em; color: #1a1612; line-height: 1;">~180/day</div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,22,18,0.6); margin-top: 4px;">70+ routes</div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 6px; border-bottom: 1px solid rgba(26,22,18,0.22);">
+              <div>
+                <div style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.01em; color: #1a1612; line-height: 1;">HER · Heraklion</div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,22,18,0.6); margin-top: 4px;">Crete · north coast</div>
+              </div>
+              <div style="text-align: right;">
+                <div style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.01em; color: #1a1612; line-height: 1;">~110/day</div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,22,18,0.6); margin-top: 4px;">55+ routes</div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.01em; color: #1a1612; line-height: 1;">SKG · Thessaloniki</div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,22,18,0.6); margin-top: 4px;">Halkidiki peninsulas</div>
+              </div>
+              <div style="text-align: right;">
+                <div style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.01em; color: #1a1612; line-height: 1;">~65/day</div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,22,18,0.6); margin-top: 4px;">30+ routes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT — title -->
+        <div>
+          <span class="numarker" style="background: var(--lime); color: #1a1612; padding: 4px 10px;">04</span>
+          <h2 style="margin-top: 24px; color: #1a1612; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 108px; line-height: 0.88; letter-spacing: -0.03em;">
+            <span style="background: var(--plaster-0); padding: 6px 18px; box-decoration-break: clone; -webkit-box-decoration-break: clone; box-shadow: 0 6px 24px rgba(0,0,0,0.08);">The&nbsp;hubs.</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>3 HUBS · 6 HOTELS · 1 COAST</span>
+        <span>04</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 05 — HOTELS · INTERACTIVE MAP                -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="05 Hotels shortlist">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/05-greece-collage.png" alt="">
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04) 40%, rgba(255,255,255,0.18));"></div>
+    <div class="slide-content pad" style="position: relative; height: 100%;">
+      <div class="chrome-top">
+        <span><span class="dot"></span>05 · HOTELS</span>
+        <span>SHORTLIST · 6 OPTIONS</span>
+      </div>
+
+      <!-- single title, slightly right of center -->
+      <div style="position: absolute; left: 56%; top: 50%; transform: translate(-50%, -50%); width: min(1000px, 62%);">
+        <span class="numarker" style="background: var(--lime); color: #1a1612; padding: 4px 10px;">05</span>
+        <h2 style="margin: 20px 0 0; color: #1a1612; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 108px; line-height: 1.05; letter-spacing: -0.025em;">
+          <span style="background: var(--plaster-0); padding: 0 22px; box-decoration-break: clone; -webkit-box-decoration-break: clone; box-shadow: 0 6px 28px rgba(0,0,0,0.10);">Six places</span><br><span style="background: var(--plaster-0); padding: 0 22px; box-decoration-break: clone; -webkit-box-decoration-break: clone; box-shadow: 0 6px 28px rgba(0,0,0,0.10);">worth a&nbsp;buyout.</span>
+        </h2>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>NEXT 6 SLIDES · ONE HOTEL EACH</span>
+        <span>05</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 06A — 06F · ONE HOTEL EACH (polaroid carousel) -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="06A Lagonissi"><div id="hotel-card-mount-lagonissi" style="position:absolute;inset:0;"></div></section>
+  <section class="slide" data-screen-label="06B EverEden"><div id="hotel-card-mount-evereden" style="position:absolute;inset:0;"></div></section>
+  <section class="slide" data-screen-label="06C Zeus + Lagoon"><div id="hotel-card-mount-zeus" style="position:absolute;inset:0;"></div></section>
+  <section class="slide" data-screen-label="06D Sani Resort"><div id="hotel-card-mount-sani" style="position:absolute;inset:0;"></div></section>
+  <section class="slide" data-screen-label="06E Mitsis Laguna"><div id="hotel-card-mount-laguna" style="position:absolute;inset:0;"></div></section>
+  <section class="slide" data-screen-label="06F Mitsis Rinela"><div id="hotel-card-mount-rinela" style="position:absolute;inset:0;"></div></section>
+
+  <!-- ============================================ -->
+  <!-- 06F2 — CARE · COMFORT PRINCIPLES + HELPERS    -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="06F2 Care">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/29-stone-flatlay-lemons.png" alt="" style="filter: saturate(0.85);">
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(245,239,228,0.65) 0%, rgba(245,239,228,0.85) 100%);"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>06F' · CARE</span>
+        <span>ONE JOB · EVERYBODY COMFORTABLE</span>
+      </div>
+
+      <!-- 2-col layout: title + lede left; helpers card right -->
+      <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 80px; margin-top: 80px; align-items: start;">
+
+        <!-- LEFT — title + lede + framed helper photo -->
+        <div style="position: relative;">
+          <span class="numarker">06F'</span>
+          <h2 class="title-xl" style="margin-top: 22px; font-size: 124px; line-height: 0.9;">
+            <span style="background: var(--lime); padding: 4px 14px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">No-one</span><br>
+            on their<br>own.
+          </h2>
+
+          <!-- framed helper photo, polaroid-style, tilted -->
+          <div style="position: absolute; right: -40px; top: -10px; width: 280px; transform: rotate(3.4deg); z-index: 4;">
+            <!-- tape -->
+            <div style="position: absolute; top: -12px; left: 28px; width: 80px; height: 22px; background: rgba(212,237,30,0.78); transform: rotate(-6deg); box-shadow: 0 2px 4px rgba(0,0,0,0.08); z-index: 5;"></div>
+            <div style="position: absolute; top: -8px; right: 22px; width: 60px; height: 18px; background: rgba(255,255,255,0.62); transform: rotate(4deg); box-shadow: 0 2px 4px rgba(0,0,0,0.08); z-index: 5;"></div>
+            <!-- "HELPER" tag -->
+            <div style="position: absolute; top: 12px; right: -14px; transform: rotate(8deg); background: rgba(242,255,84,0.92); padding: 4px 10px;
+                        font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #1a1612;
+                        border: 1px solid rgba(10,10,8,0.22); box-shadow: 0 6px 12px rgba(0,0,0,0.10); z-index: 6;">Helper · on duty</div>
+            <div style="background: #fff; padding: 12px 12px 0; box-shadow: 0 24px 48px rgba(26,22,18,0.22), 0 8px 16px rgba(26,22,18,0.12);">
+              <img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/helpers-statue-hoodie.png" alt="Branded helper escorting guests" style="display: block; width: 100%; aspect-ratio: 3/4; object-fit: cover;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 10px 4px 12px;">
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: rgba(26,22,18,0.6); text-transform: uppercase;">Branded uniform · escort</div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: rgba(26,22,18,0.4); text-transform: uppercase;">CARE/01</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 38px; max-width: 540px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 24px; line-height: 1.4; color: var(--ink-1);">
+            One job: 350 guests, three days, all of them comfortable. We staff the territory with <strong>on-site helpers</strong> — meet you off the bus, walk you in, point at the things you'd otherwise miss.
+          </div>
+
+          <div style="margin-top: 28px; display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; background: rgba(26,22,18,0.92); color: var(--plaster-0);">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--lime); display: inline-block;"></span>
+            <span style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.02em; line-height: 1;">Comfort is a production deliverable, not a vibe.</span>
+          </div>
+        </div>
+
+        <!-- RIGHT — helpers card stack -->
+        <div style="position: relative;">
+
+          <!-- header strip -->
+          <div style="background: var(--ink-0); color: var(--plaster-0); padding: 14px 20px; display: flex; justify-content: space-between; align-items: baseline; border: 1px solid var(--ink-0);">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;">Helpers · on the ground</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: rgba(245,239,228,0.6); text-transform: uppercase;">350 PAX · 3 DAYS</span>
+          </div>
+
+          <!-- 3 principle rows -->
+          <div style="background: rgba(245,239,228,0.96); border: 1px solid var(--ink-line); border-top: none;">
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 22px; padding: 22px 24px; border-bottom: 1px solid var(--ink-line); align-items: baseline;">
+              <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 44px; line-height: 0.9; color: var(--ink-0); letter-spacing: -0.03em;">01</div>
+              <div>
+                <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 26px; color: var(--ink-0); line-height: 1.1;">Meet &amp; walk-in.</div>
+                <div style="margin-top: 6px; font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.45; color: var(--ink-2);">Helpers greet every arrival, do the hotel tour, hand off the welcome pack.</div>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 22px; padding: 22px 24px; border-bottom: 1px solid var(--ink-line); align-items: baseline;">
+              <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 44px; line-height: 0.9; color: var(--ink-0); letter-spacing: -0.03em;">02</div>
+              <div>
+                <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 26px; color: var(--ink-0); line-height: 1.1;">Always findable.</div>
+                <div style="margin-top: 6px; font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.45; color: var(--ink-2);">Lime tees, posted at every node — pool, lobby, stage, beach. You see one within 30 seconds.</div>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 56px 1fr; gap: 22px; padding: 22px 24px; align-items: baseline;">
+              <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 44px; line-height: 0.9; color: var(--ink-0); letter-spacing: -0.03em;">03</div>
+              <div>
+                <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 26px; color: var(--ink-0); line-height: 1.1;">What's where, what works.</div>
+                <div style="margin-top: 6px; font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.45; color: var(--ink-2);">Hotel perks, pool hours, bar codes, transfer times — they answer it before you ask.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- footer ticker -->
+          <div style="margin-top: 14px; display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);">
+            <span style="width: 8px; height: 8px; background: var(--lime); display: inline-block;"></span>
+            <span>1 helper / ~25 guests · briefed · scripted · scored</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>NOBODY LOST · NOBODY UNUSED · NOBODY UNCOMFORTABLE</span>
+        <span>06F'</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 06F3 — WITH GOD'S HELP · ON-SITE APP          -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="06F3 With god's help">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/13-collage-statues.png" alt="" style="filter: saturate(0.88);">
+    <div style="position:absolute; inset:0; background: linear-gradient(90deg, rgba(245,239,228,0.40) 0%, rgba(245,239,228,0.78) 50%, rgba(245,239,228,0.92) 100%);"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>06F'' · WITH GOD'S HELP</span>
+        <span>ON-SITE APP · OR W/A · OR TG</span>
+      </div>
+
+      <!-- 2-col: phone left, copy right -->
+      <div style="display: grid; grid-template-columns: 380px 1fr; gap: 80px; margin-top: 60px; align-items: start;">
+
+        <!-- LEFT — phone mock with tape -->
+        <div style="position: relative; transform: rotate(-2.4deg);">
+          <div style="position: absolute; top: -14px; left: 60px; width: 110px; height: 26px; background: rgba(212,237,30,0.78); transform: rotate(-6deg); box-shadow: 0 2px 4px rgba(0,0,0,0.08); z-index: 5;"></div>
+          <div style="position: absolute; top: -10px; right: 40px; width: 80px; height: 22px; background: rgba(255,255,255,0.62); transform: rotate(4deg); box-shadow: 0 2px 4px rgba(0,0,0,0.08); z-index: 5;"></div>
+          <img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/app-on-the-wave.png" alt="On-site app" style="display: block; width: 100%; box-shadow: 0 28px 56px rgba(26,22,18,0.32), 0 12px 20px rgba(26,22,18,0.18);">
+          <div style="position: absolute; bottom: -22px; right: -16px; transform: rotate(8deg); background: rgba(242,255,84,0.92); padding: 5px 12px;
+                      font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #1a1612;
+                      border: 1px solid rgba(10,10,8,0.22); box-shadow: 0 6px 12px rgba(0,0,0,0.10);">App · 1 tap to a curator</div>
+        </div>
+
+        <!-- RIGHT — title + copy + alt cards -->
+        <div>
+          <span class="numarker">06F''</span>
+          <h2 class="title-xl" style="margin-top: 22px; font-size: 116px; line-height: 0.9;">
+            With <span style="background: var(--lime); padding: 4px 14px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">god's</span><br>help.
+          </h2>
+
+          <div style="margin-top: 30px; max-width: 720px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 24px; line-height: 1.4; color: var(--ink-1);">
+            One app for the offsite — agenda, map, transfers, ping-a-curator. Or, if app fatigue is a thing: a <strong>WhatsApp / Telegram</strong> chat that does the same job. We pick whichever the room actually opens.
+          </div>
+
+          <!-- 2 channel cards -->
+          <div style="margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 760px;">
+            <div style="padding: 18px 22px; background: rgba(245,239,228,0.96); border: 1px solid var(--ink-line); position: relative;">
+              <div style="position: absolute; top: -10px; left: 16px; background: var(--ink-0); color: var(--plaster-0); padding: 4px 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">A · Native app</div>
+              <div style="margin-top: 10px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 22px; color: var(--ink-0); line-height: 1.15;">On the wave.</div>
+              <div style="margin-top: 6px; font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.45; color: var(--ink-2);">Agenda · map · help · profile. Push for stage calls. Curator chat in-app.</div>
+            </div>
+            <div style="padding: 18px 22px; background: rgba(245,239,228,0.96); border: 1px solid var(--ink-line); position: relative;">
+              <div style="position: absolute; top: -10px; left: 16px; background: var(--lime); color: var(--ink-0); padding: 4px 10px; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">B · WhatsApp / TG</div>
+              <div style="margin-top: 10px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 22px; color: var(--ink-0); line-height: 1.15;">No app, no friction.</div>
+              <div style="margin-top: 6px; font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.45; color: var(--ink-2);">One group chat per crew · daily pinned schedule · curators on call.</div>
+            </div>
+          </div>
+
+          <!-- bottom stamp -->
+          <div style="margin-top: 28px; display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; background: rgba(26,22,18,0.92); color: var(--plaster-0);">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--lime); display: inline-block;"></span>
+            <span style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: 0.02em; line-height: 1;">One channel. One source of truth. Curators reply in minutes, not hours.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>AGENDA · MAP · HELP · PROFILE — OR JUST A CHAT</span>
+        <span>06F''</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 06G — WELCOME PACK · POLAROID                -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="06G Welcome pack">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/29-stone-flatlay-lemons.png" alt="">
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>06G · WELCOME PACK</span>
+        <span>FIRST CONTACT · ROOM DROP</span>
+      </div>
+
+      <!-- 2-col layout: title + body left, polaroid right -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 100px; align-items: start;">
+
+        <!-- LEFT — copy -->
+        <div>
+          <span class="numarker">06G</span>
+          <h2 class="title-xl" style="margin-top: 22px; font-size: 132px; line-height: 0.9;">
+            <span style="background: var(--lime); padding: 4px 14px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">Welcome</span><br>
+            pack.
+          </h2>
+
+          <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 720px;">
+            <div style="padding: 18px 22px; background: rgba(245,239,228,0.94); border: 1px solid var(--ink-line);">
+              <div class="mono-s" style="color: var(--ink-mute);">01 · NFC KEYCHAIN</div>
+              <div class="body-s" style="color: var(--ink-1); margin-top: 6px;">Tap to add anyone to friends. The icebreaker, but silent.</div>
+            </div>
+            <div style="padding: 18px 22px; background: rgba(245,239,228,0.94); border: 1px solid var(--ink-line);">
+              <div class="mono-s" style="color: var(--ink-mute);">02 · CROCS + JIBBITZ</div>
+              <div class="body-s" style="color: var(--ink-1); margin-top: 6px;">Brand-lime Crocs with custom Jibbitz charms. Pool-to-stage uniform.</div>
+            </div>
+            <div style="padding: 18px 22px; background: rgba(245,239,228,0.94); border: 1px solid var(--ink-line); grid-column: 1 / -1;">
+              <div class="mono-s" style="color: var(--ink-mute);">03 · POSTCARD</div>
+              <div class="body-s" style="color: var(--ink-1); margin-top: 6px;">Program on the front, key contacts and map on the back. Pocket-sized, no app required.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT — welcome-pack carousel: arrow nav + per-item aspect, no cropping -->
+        <div style="position: relative; padding: 20px 24px 0;">
+          <div id="wp-carousel" style="position: relative; width: 100%; max-width: 580px; margin: 0 auto;">
+
+            <!-- card 0: BOX (landscape 3:2) -->
+            <div class="wp-card" data-i="0" style="position: relative; opacity: 1; transition: opacity 500ms ease;">
+              <div style="background: #fff; padding: 18px 18px 0; box-shadow: 0 18px 36px rgba(0,0,0,0.18), 0 6px 12px rgba(0,0,0,0.10); transform: rotate(-1.6deg);">
+                <div style="aspect-ratio: 3/2; background: #d9d4c4 url('https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/welcome-box.png') center/cover no-repeat;"></div>
+                <div style="padding: 16px 6px 18px; display: flex; justify-content: space-between; align-items: baseline;">
+                  <div>
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(26,22,18,0.55); text-transform: uppercase;">01 · The drop</div>
+                  </div>
+                  <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(26,22,18,0.4); text-transform: uppercase;">SD/06G·01</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- card 1: KEYCHAIN (portrait) -->
+            <div class="wp-card" data-i="1" style="position: absolute; inset: 0; opacity: 0; transition: opacity 500ms ease;">
+              <div style="background: #fff; padding: 18px 18px 0; box-shadow: 0 18px 36px rgba(0,0,0,0.18), 0 6px 12px rgba(0,0,0,0.10); transform: rotate(1.4deg); width: 62%; margin: 0 auto;">
+                <div style="aspect-ratio: 906/1736; background: #fff8c2 url('https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/welcome-keychain.png') center/contain no-repeat;"></div>
+                <div style="padding: 14px 4px 16px; display: flex; justify-content: space-between; align-items: baseline;">
+                  <div>
+                    <div style="font-family: 'Caveat', 'Inter', cursive; font-weight: 600; font-size: 26px; color: #1a1612; line-height: 1;">NFC keychain.</div>
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(26,22,18,0.55); text-transform: uppercase; margin-top: 6px;">02 · Tap → friend</div>
+                  </div>
+                  <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(26,22,18,0.4); text-transform: uppercase;">SD/06G·02</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- card 2: CROCS (landscape 3:2) -->
+            <div class="wp-card" data-i="2" style="position: absolute; inset: 0; opacity: 0; transition: opacity 500ms ease;">
+              <div style="background: #fff; padding: 18px 18px 0; box-shadow: 0 18px 36px rgba(0,0,0,0.18), 0 6px 12px rgba(0,0,0,0.10); transform: rotate(-0.8deg);">
+                <div style="aspect-ratio: 3/2; background: #e6d8b8 url('https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/welcome-crocs.png') center/cover no-repeat;"></div>
+                <div style="padding: 16px 6px 18px; display: flex; justify-content: space-between; align-items: baseline;">
+                  <div>
+                    <div style="font-family: 'Caveat', 'Inter', cursive; font-weight: 600; font-size: 28px; color: #1a1612; line-height: 1;">Crocs + Jibbitz.</div>
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(26,22,18,0.55); text-transform: uppercase; margin-top: 6px;">03 · Pool-to-stage</div>
+                  </div>
+                  <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(26,22,18,0.4); text-transform: uppercase;">SD/06G·03</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- card 3: POSTCARD (landscape 3:2, contain) -->
+            <div class="wp-card" data-i="3" style="position: absolute; inset: 0; opacity: 0; transition: opacity 500ms ease;">
+              <div style="background: #fff; padding: 18px 18px 0; box-shadow: 0 18px 36px rgba(0,0,0,0.18), 0 6px 12px rgba(0,0,0,0.10); transform: rotate(2deg);">
+                <div style="aspect-ratio: 3/2; background-color: #f0eef5; background-image: url('https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/welcome-postcard.png'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+                <div style="padding: 16px 6px 18px; display: flex; justify-content: space-between; align-items: baseline;">
+                  <div>
+                    <div style="font-family: 'Caveat', 'Inter', cursive; font-weight: 600; font-size: 28px; color: #1a1612; line-height: 1;">Holo postcard.</div>
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(26,22,18,0.55); text-transform: uppercase; margin-top: 6px;">04 · Program + contacts</div>
+                  </div>
+                  <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(26,22,18,0.4); text-transform: uppercase;">SD/06G·04</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- arrow nav -->
+            <button id="wp-prev" aria-label="Previous" style="position: absolute; left: -28px; top: 42%; transform: translateY(-50%); width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--ink-line); background: var(--plaster-0); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 18px rgba(0,0,0,0.12); z-index: 10; padding: 0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5L8 12L15 19" stroke="#1a1612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <button id="wp-next" aria-label="Next" style="position: absolute; right: -28px; top: 42%; transform: translateY(-50%); width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--ink-line); background: var(--lime); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 18px rgba(0,0,0,0.18); z-index: 10; padding: 0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5L16 12L9 19" stroke="#1a1612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </div>
+
+          <!-- counter -->
+          <div id="wp-counter" style="text-align: center; margin-top: 22px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: rgba(26,22,18,0.6); text-transform: uppercase;">01 / 04</div>
+
+          <!-- lime tape sticker -->
+          <div style="position: absolute; top: -8px; right: 0; transform: rotate(8deg); background: var(--lime); color: var(--ink-0); padding: 8px 14px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; box-shadow: 0 6px 18px rgba(0,0,0,0.15); z-index: 5;">
+            Hi, 350.
+          </div>
+
+          <script>
+            (function(){
+              var cards = document.querySelectorAll('#wp-carousel .wp-card');
+              var counter = document.getElementById('wp-counter');
+              var prev = document.getElementById('wp-prev');
+              var next = document.getElementById('wp-next');
+              var i = 0;
+              var n = cards.length;
+              function pad(x){ return ('0' + (x+1)).slice(-2); }
+              function show(k){
+                i = (k + n) % n;
+                cards.forEach(function(c, idx){
+                  c.style.opacity = idx === i ? 1 : 0;
+                  c.style.pointerEvents = idx === i ? 'auto' : 'none';
+                });
+                counter.textContent = pad(i) + ' / ' + pad(n-1);
+              }
+              prev.addEventListener('click', function(){ show(i-1); });
+              next.addEventListener('click', function(){ show(i+1); });
+              show(0);
+            })();
+          </script>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>SOFT START · ROOM DROP · NO SCRIPT YET</span>
+        <span>06G</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 06H — DIVIDER · MOVEMENT                     -->
+  <!-- ============================================ -->
+  <section class="slide divider-slide" data-screen-label="06H Divider — Movement">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/02-sail-sea.png" alt="">
+
+    <div class="slide-content pad-lg">
+      <div class="chrome-top" style="color: rgba(26,22,18,0.7);">
+        <span><span class="dot"></span>CHAPTER · MOVEMENT</span>
+        <span>WHAT HAPPENS · MINUTE BY MINUTE</span>
+      </div>
+
+      <!-- giant headline, biased low-left -->
+      <div style="position: absolute; left: 140px; bottom: 200px; max-width: 1500px;">
+        <div class="kicker" style="color: rgba(26,22,18,0.7); margin-bottom: 28px;">
+          Three days · one current
+        </div>
+        <h2 class="title-xxl" style="color: #1a1612; font-size: 180px; line-height: 0.86; letter-spacing: -0.04em; font-style: italic; text-transform: uppercase;">
+          <span style="display: inline-block; position: relative;">
+            <span style="position: absolute; left: -10px; right: -10px; top: 38%; bottom: 8%; background: var(--lime); z-index: 0; transform: skewX(-8deg);"></span>
+            <span style="position: relative; z-index: 1; color: #1a1612;">Movement</span>
+          </span><span style="color: rgba(26,22,18,0.45); font-style: normal;">.</span>
+        </h2>
+      </div>
+
+      <!-- holo seal, top right -->
+      <div style="position: absolute; right: 140px; top: 50%; transform: translateY(-50%);">
+        <div class="holo" style="width: 240px; height: 240px;">
+          <div class="holo-inner">
+            DAY 01<br>→ DAY 03<br>NON-STOP
+          </div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom" style="color: rgba(26,22,18,0.7);">
+        <span>NEXT · DAY-BY-DAY · CARDS</span>
+        <span>06H</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 06I — PROGRAM · DAY CARDS (3 days)           -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="06I Plan — day cards">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/28-collage-summer-postcard.png" alt="">
+    <!-- light vignette only — keeps cards crisp without erasing the collage -->
+    <div style="position:absolute; inset:0; background: radial-gradient(ellipse at center, rgba(245,239,228,0.0) 30%, rgba(245,239,228,0.45) 100%);"></div>
+
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>06I · MOVEMENT</span>
+        <span>3 PROGRAMME DAYS · 350 PAX</span>
+      </div>
+
+      <div style="display: flex; align-items: baseline; gap: 28px; margin-top: 60px; justify-content: flex-end; padding-right: 220px;">
+        <span class="numarker">06I</span>
+        <h2 class="title-xl" style="text-align: right;">The plan,<br>day by day.</h2>
+      </div>
+
+      <!-- 3 day cards (programme days only) -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 80px;">
+
+        <!-- Day 1 -->
+        <div style="background: var(--paper); padding: 40px 32px 32px; border: 1px solid var(--ink-line); position: relative; box-shadow: 0 24px 48px rgba(26,22,18,0.12);">
+          <div style="position: absolute; top: -14px; left: 24px;">
+            <span style="background: var(--ink-0); color: var(--plaster-0); padding: 6px 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;">DAY 01 · ARRIVAL</span>
+          </div>
+          <div class="title-m" style="font-size: 44px; margin-top: 16px; line-height: 0.95;">Land &amp;<br>switch on.</div>
+          <div class="mono-s" style="color: var(--ink-mute); margin-top: 16px; letter-spacing: 0.14em; font-size: 12px;">ARRIVAL · WELCOME · SETTLE</div>
+
+          <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px;">
+            <div class="day-row"><span>14:00</span><span>Staggered transfers from airport</span></div>
+            <div class="day-row"><span>16:00</span><span>Check-in · room drops · welcome pack</span></div>
+            <div class="day-row"><span>18:30</span><span>Pool deck · sunset open bar</span></div>
+            <div class="day-row"><span>20:30</span><span>Welcome dinner · Greek family-style</span></div>
+            <div class="day-row"><span>23:00</span><span>Late lounge · DJ · pool</span></div>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div style="background: var(--paper); padding: 40px 32px 32px; border: 1px solid var(--ink-line); position: relative; box-shadow: 0 24px 48px rgba(26,22,18,0.12);">
+          <div style="position: absolute; top: -14px; left: 24px;">
+            <span style="background: var(--lime); color: var(--ink-0); padding: 6px 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;">DAY 02 · CONFERENCE</span>
+          </div>
+          <div class="title-m" style="font-size: 44px; margin-top: 16px; line-height: 0.95;">Conference<br>day.</div>
+          <div class="mono-s" style="color: var(--ink-mute); margin-top: 16px; letter-spacing: 0.14em; font-size: 12px;">WORK · WORKSHOPS · TALKS</div>
+
+          <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px;">
+            <div class="day-row"><span>09:00</span><span>Breakfast · expanded service</span></div>
+            <div class="day-row"><span>10:00</span><span>Plenary — strategy keynote</span></div>
+            <div class="day-row"><span>12:00</span><span>Lunch · multi-station outdoor</span></div>
+            <div class="day-row"><span>14:00</span><span>Breakout workshops × 4 rooms</span></div>
+            <div class="day-row"><span>17:00</span><span>Closing plenary + Q&amp;A</span></div>
+            <div class="day-row"><span>20:00</span><span>Casual dinner · poolside</span></div>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div style="background: var(--paper); padding: 40px 32px 32px; border: 1px solid var(--ink-line); position: relative; box-shadow: 0 24px 48px rgba(26,22,18,0.12);">
+          <div style="position: absolute; top: -14px; left: 24px;">
+            <span style="background: var(--terracotta); color: var(--plaster-0); padding: 6px 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;">DAY 03 · SAIL &amp; GALA</span>
+          </div>
+          <div class="title-m" style="font-size: 44px; margin-top: 16px; line-height: 0.95;">Sail &amp;<br>celebrate.</div>
+          <div class="mono-s" style="color: var(--ink-mute); margin-top: 16px; letter-spacing: 0.14em; font-size: 12px;">TEAMBUILDING · GALA</div>
+
+          <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px;">
+            <div class="day-row"><span>10:00</span><span>Marina transfer · safety brief</span></div>
+            <div class="day-row"><span>11:00</span><span>Regatta — 8 yachts × ~40 pax</span></div>
+            <div class="day-row"><span>15:00</span><span>Beach drop · Greek mezze</span></div>
+            <div class="day-row"><span>17:00</span><span>Return · rest · costume</span></div>
+            <div class="day-row"><span>20:00</span><span>Gala dinner · live performance</span></div>
+            <div class="day-row"><span>23:00</span><span>Afterparty · pool · open bar</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer note -->
+      <div style="margin-top: 48px; display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--ink-line);">
+        <div class="mono-m" style="color: var(--ink-3);">3 programme days · +1 travel home</div>
+        <div class="mono-m" style="color: var(--ink-mute);">SD/26/GR · PROGRAM v01</div>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>SCHEDULE · WORK + PLAY + RESET</span>
+        <span>06I</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 11 — CONFERENCE SETUP                        -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="11 Conference setup">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/17-terrace-canopy.png" alt="">
+    <!-- soft side vignette only — keeps the photo visible behind the content frame -->
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(245,239,228,0.0) 0%, rgba(245,239,228,0.18) 40%, rgba(245,239,228,0.45) 100%);"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>11 · CONFERENCE</span>
+        <span>ROOMS · CONTENT · LIGHT-TOUCH BRANDING</span>
+      </div>
+
+      <!-- compact title block, top -->
+      <div style="margin-top: 18px; background: rgba(245,239,228,0.95); padding: 18px 28px; display: inline-block; box-shadow: 0 18px 36px rgba(26,22,18,0.10);">
+        <div style="display: flex; align-items: baseline; gap: 22px;">
+          <span class="numarker">11</span>
+          <h2 class="title-xl" style="font-size: 76px; line-height: 0.92;">The room does the work.</h2>
+        </div>
+        <div class="body-m" style="color: var(--ink-3); margin-top: 12px; max-width: 1200px;">
+          Brand lives on the screens, in the words, in the air — not on plastic step-and-repeats. Restraint &gt; saturation.
+        </div>
+      </div>
+
+      <!-- two polaroids side-by-side, height-constrained so they always fit -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 28px; height: 560px;">
+
+        <!-- polaroid 1 — plenary -->
+        <div style="position: relative; height: 100%; aspect-ratio: 1536 / 1024; margin: 0 auto;">
+          <img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/plenary-coinspaid.png" alt="Plenary room with CoinsPaid stage"
+               style="position: absolute; left: 9.64%; top: 18.85%; width: 77.41%; height: 54.79%; object-fit: cover; z-index: 1;">
+          <img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/polaroid-frame.png" alt=""
+               style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none;
+                      filter: drop-shadow(0 14px 24px rgba(26,22,18,0.22));">
+          <div style="position: absolute; left: 9.64%; right: 12.96%; bottom: 6%; display: flex; align-items: center; justify-content: space-between; z-index: 3;
+                      font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2);">
+            <span>Plenary · 350 pax</span>
+            <span style="color: var(--ink-mute);">LED 12×4m · 2 IMAG</span>
+          </div>
+        </div>
+
+        <!-- polaroid 2 — breakout -->
+        <div style="position: relative; height: 100%; aspect-ratio: 1536 / 1024; margin: 0 auto;">
+          <img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/breakout-empty.png" alt="Breakout room"
+               style="position: absolute; left: 9.64%; top: 18.85%; width: 77.41%; height: 54.79%; object-fit: cover; z-index: 1;">
+          <img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/polaroid-frame.png" alt=""
+               style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none;
+                      filter: drop-shadow(0 14px 24px rgba(26,22,18,0.22));">
+          <div style="position: absolute; left: 9.64%; right: 12.96%; bottom: 6%; display: flex; align-items: center; justify-content: space-between; z-index: 3;
+                      font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2);">
+            <span>Breakout · 70–100 pax</span>
+            <span style="color: var(--ink-mute);">4 rooms · own AV</span>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="chrome-bottom">
+        <span>STAGE · BREAKOUTS · IN-EAR · IMAG</span>
+        <span>11</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 11A — SET DESIGN · DECOR ELEMENTS            -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="11A Set design">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/17-terrace-canopy.png" alt="" style="filter: saturate(0.85) brightness(1.02);">
+    <!-- heavier scrim — this slide is a moodboard, the photos do the visual work -->
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(245,239,228,0.55) 0%, rgba(245,239,228,0.78) 60%, rgba(245,239,228,0.88) 100%);"></div>
+    <!-- paper grain -->
+    <div style="position: absolute; inset: 0; background-image: radial-gradient(rgba(10,10,8,0.04) 1px, transparent 1px); background-size: 3px 3px; mix-blend-mode: multiply; pointer-events: none;"></div>
+
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>11A · SET DESIGN</span>
+        <span>DECOR ELEMENTS · 5 REFERENCES · IN-SPACE</span>
+      </div>
+
+      <!-- title block -->
+      <div style="margin-top: 18px; background: rgba(245,239,228,0.95); padding: 18px 28px; display: inline-block; box-shadow: 0 18px 36px rgba(26,22,18,0.10);">
+        <div style="display: flex; align-items: baseline; gap: 22px;">
+          <span class="numarker">11A</span>
+          <h2 class="title-xl" style="font-size: 76px; line-height: 0.92;">What lives in the room.</h2>
+        </div>
+        <div class="body-m" style="color: var(--ink-3); margin-top: 12px; max-width: 1100px;">
+          Five reference objects → the vocabulary of the space. Olive trees, linen drape, ceramic, stone, brass. No event slop, no plastic.
+        </div>
+      </div>
+
+      <!-- 5-photo moodboard — irregular polaroid grid, taped onto the plaster -->
+      <div style="position: relative; margin-top: 84px; height: 600px;">
+
+        <!-- card 1 — large left -->
+        <div style="position: absolute; left: 0%; top: 4%; width: 26%; aspect-ratio: 3 / 4; transform: rotate(-2.4deg);
+                    background: var(--plaster-0); padding: 16px 16px 56px; border: 1px solid rgba(10,10,8,0.18);
+                    box-shadow: 0 22px 40px rgba(20,16,8,0.22);">
+          <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%) rotate(2deg); width: 84px; height: 26px; background: rgba(242,255,84,0.78); border: 1px solid rgba(10,10,8,0.18); box-shadow: 0 4px 8px rgba(0,0,0,0.08);"></div>
+          <div style="position: relative; width: 100%; height: 100%; background: #efe8d5 url('https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/set-design/olive-tree-hero.png') center/cover no-repeat;"></div>
+          <div style="position: absolute; left: 16px; right: 16px; bottom: 14px; display: flex; align-items: center; justify-content: space-between;
+                      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2);">
+            <span>Element 01 · olive tree</span>
+            <span style="color: var(--ink-mute);">REF</span>
+          </div>
+        </div>
+
+        <!-- card 2 — wide center-left -->
+        <div style="position: absolute; left: 22%; top: 24%; width: 26%; aspect-ratio: 4 / 3; transform: rotate(1.8deg);
+                    background: var(--plaster-0); padding: 16px 16px 52px; border: 1px solid rgba(10,10,8,0.18);
+                    box-shadow: 0 22px 40px rgba(20,16,8,0.22);">
+          <div style="position: relative; width: 100%; height: 100%; background: #efe8d5 url('https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/set-design/light-bars.png') center/cover no-repeat;"></div>
+          <div style="position: absolute; left: 16px; right: 16px; bottom: 14px; display: flex; align-items: center; justify-content: space-between;
+                      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2);">
+            <span>Element 02 · light bars</span>
+            <span style="color: var(--ink-mute);">REF</span>
+          </div>
+        </div>
+
+        <!-- card 3 — center hero, square -->
+        <div style="position: absolute; left: 42%; top: 0%; width: 22%; aspect-ratio: 4 / 5; transform: rotate(-1.2deg);
+                    background: var(--plaster-0); padding: 16px 16px 52px; border: 1px solid rgba(10,10,8,0.18);
+                    box-shadow: 0 24px 44px rgba(20,16,8,0.24); z-index: 2;">
+          <div style="position: absolute; top: -16px; right: -10px; transform: rotate(8deg); background: rgba(242,255,84,0.85); padding: 4px 10px;
+                      font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #1a1612;
+                      border: 1px solid rgba(10,10,8,0.22); box-shadow: 0 6px 12px rgba(0,0,0,0.10);">HERO</div>
+          <div style="position: relative; width: 100%; height: 100%; background: #efe8d5 url('https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/set-design/cubes-hero.png') center/cover no-repeat;"></div>
+          <div style="position: absolute; left: 16px; right: 16px; bottom: 14px; display: flex; align-items: center; justify-content: space-between;
+                      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2);">
+            <span>Element 03 · cubes</span>
+            <span style="color: var(--ink-mute);">REF</span>
+          </div>
+        </div>
+
+        <!-- card 4 — center-right -->
+        <div style="position: absolute; left: 58%; top: 36%; width: 28%; aspect-ratio: 3 / 2; transform: rotate(2.6deg);
+                    background: var(--plaster-0); padding: 16px 16px 52px; border: 1px solid rgba(10,10,8,0.18);
+                    box-shadow: 0 22px 40px rgba(20,16,8,0.22);">
+          <div style="position: relative; width: 100%; height: 100%; background: #2a2520 url('https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/set-design/registration-bar.png') center/cover no-repeat;"></div>
+          <div style="position: absolute; left: 16px; right: 16px; bottom: 14px; display: flex; align-items: center; justify-content: space-between;
+                      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2);">
+            <span>Element 04 · registration bar</span>
+            <span style="color: var(--ink-mute);">REF</span>
+          </div>
+        </div>
+
+        <!-- card 5 — far right, framed sign on kraft, no crop -->
+        <div style="position: absolute; right: -1%; top: 4%; width: 24%; aspect-ratio: 5 / 4; transform: rotate(3.2deg);
+                    background: var(--plaster-0); padding: 14px 14px 48px; border: 1px solid rgba(10,10,8,0.18);
+                    box-shadow: 0 22px 40px rgba(20,16,8,0.22);">
+          <div style="position: absolute; top: -14px; left: 22px; transform: rotate(-6deg); width: 90px; height: 22px; background: rgba(212,237,30,0.78); border: 1px solid rgba(10,10,8,0.18); box-shadow: 0 4px 8px rgba(0,0,0,0.08);"></div>
+          <div style="position: absolute; top: -16px; right: -8px; transform: rotate(8deg); background: var(--ink-0); color: var(--plaster-0); padding: 4px 10px;
+                      font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+                      box-shadow: 0 6px 12px rgba(0,0,0,0.12);">Held sign</div>
+          <div style="position: relative; width: 100%; height: 100%; background: #c9b88f url('https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/set-design/welcome-board.png') center/contain no-repeat;"></div>
+          <div style="position: absolute; left: 14px; right: 14px; bottom: 12px; display: flex; align-items: center; justify-content: space-between;
+                      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2);">
+            <span>Element 05 · welcome poster</span>
+            <span style="color: var(--ink-mute);">REF</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- legend strip -->
+      <div style="margin-top: 24px; display: flex; align-items: center; gap: 14px;
+                  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(10,10,8,0.6);">
+        <span style="flex: 1; height: 1px; background: rgba(10,10,8,0.22);"></span>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>OBJECTS · TEXTURE · COLOR · LIGHT · SCALE</span>
+        <span>11A</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 12 — THE HOST · AI CO-HOST                   -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="12 The host">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/13-collage-statues.png" alt="">
+    <!-- soft right-side wash so the right column reads cleanly over the busy collage -->
+    <div style="position:absolute; inset:0; background: linear-gradient(90deg, rgba(245,239,228,0.0) 0%, rgba(245,239,228,0.0) 30%, rgba(245,239,228,0.78) 65%, rgba(245,239,228,0.92) 100%);"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>12 · THE HOST</span>
+        <span>AI CO-HOST · SCRIPTED · SCORED · ANIMATED</span>
+      </div>
+
+      <!-- AI host preview frame — polaroid-style on the left, tilted with tape -->
+      <div style="position: absolute; left: 80px; top: 220px; width: 26%; transform: rotate(-2.4deg); z-index: 4;">
+        <!-- tape pieces -->
+        <div style="position: absolute; top: -12px; left: 22px; width: 76px; height: 22px; background: rgba(212,237,30,0.78); transform: rotate(-6deg); box-shadow: 0 2px 4px rgba(0,0,0,0.08); z-index: 5;"></div>
+        <div style="position: absolute; top: -8px; right: 28px; width: 64px; height: 18px; background: rgba(255,255,255,0.62); transform: rotate(4deg); box-shadow: 0 2px 4px rgba(0,0,0,0.08); z-index: 5;"></div>
+        <div style="background: #fff; padding: 11px 11px 0; box-shadow: 0 24px 48px rgba(26,22,18,0.22), 0 8px 16px rgba(26,22,18,0.12);">
+          <img src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/ai-host-screen.png" alt="AI host on auditorium LED" style="display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 10px 3px 12px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: rgba(26,22,18,0.6); text-transform: uppercase;">Stage preview · LED 16:9</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: rgba(26,22,18,0.4); text-transform: uppercase;">HOST/01</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- title block on plaster card, right-leaning so it sits on the clean side -->
+      <div style="margin-top: 40px; margin-left: 38%; background: rgba(245,239,228,0.95); padding: 24px 32px; box-shadow: 0 18px 36px rgba(26,22,18,0.10);">
+        <div style="display: flex; align-items: baseline; gap: 22px;">
+          <span class="numarker">12</span>
+          <h2 class="title-xl" style="font-size: 88px; line-height: 1.05;">The host<br>is <span style="background: var(--lime); padding: 2px 14px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">AI-verything.</span></h2>
+        </div>
+      </div>
+
+      <!-- waveform — moved from sound slide; sits between title and pillars on the right column -->
+      <div style="margin-top: 22px; margin-left: 38%; display: flex; align-items: center; gap: 4px; height: 56px;">
+        <div class="wave-bar" style="--h: 30%;"></div>
+        <div class="wave-bar" style="--h: 60%;"></div>
+        <div class="wave-bar" style="--h: 90%;"></div>
+        <div class="wave-bar" style="--h: 50%;"></div>
+        <div class="wave-bar" style="--h: 75%;"></div>
+        <div class="wave-bar" style="--h: 40%;"></div>
+        <div class="wave-bar" style="--h: 85%;"></div>
+        <div class="wave-bar" style="--h: 25%;"></div>
+        <div class="wave-bar" style="--h: 65%;"></div>
+        <div class="wave-bar" style="--h: 45%;"></div>
+        <div class="wave-bar" style="--h: 80%;"></div>
+        <div class="wave-bar" style="--h: 55%;"></div>
+        <div class="wave-bar" style="--h: 95%;"></div>
+        <div class="wave-bar" style="--h: 35%;"></div>
+        <div class="wave-bar" style="--h: 70%;"></div>
+        <div class="wave-bar" style="--h: 50%;"></div>
+        <div class="wave-bar" style="--h: 85%;"></div>
+        <div class="wave-bar" style="--h: 30%;"></div>
+        <div class="wave-bar" style="--h: 60%;"></div>
+        <div class="wave-bar" style="--h: 75%;"></div>
+        <div class="wave-bar" style="--h: 40%;"></div>
+        <div class="wave-bar" style="--h: 90%;"></div>
+        <div class="wave-bar" style="--h: 55%;"></div>
+        <div class="wave-bar" style="--h: 25%;"></div>
+        <div class="wave-bar" style="--h: 70%;"></div>
+        <div class="wave-bar" style="--h: 45%;"></div>
+        <div class="wave-bar" style="--h: 80%;"></div>
+        <div class="wave-bar" style="--h: 35%;"></div>
+        <div class="wave-bar" style="--h: 65%;"></div>
+        <div class="wave-bar" style="--h: 50%;"></div>
+      </div>
+
+      <!-- 4 pillars: Script · Voice · Bits · Animation -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 22px; margin-left: 38%;">
+
+        <div style="background: var(--paper); padding: 22px; box-shadow: 0 18px 36px rgba(26,22,18,0.10);">
+          <div class="kicker" style="color: var(--ink-mute);">01 · SCRIPT</div>
+          <div class="title-s" style="font-size: 22px; margin-top: 10px;">Every word, in advance.</div>
+          <div class="body-s" style="color: var(--ink-3); margin-top: 10px; line-height: 1.45;">
+            Whole 4-day arc — open, transitions, intros, recap, toast. Locked to the timecode. No improv risk, no awkward pauses.
+          </div>
+        </div>
+
+        <div style="background: var(--paper); padding: 22px; box-shadow: 0 18px 36px rgba(26,22,18,0.10);">
+          <div class="kicker" style="color: var(--ink-mute);">02 · VOICE &amp; SOUND</div>
+          <div class="title-s" style="font-size: 22px; margin-top: 10px;">Greek-coded score.</div>
+          <div class="body-s" style="color: var(--ink-3); margin-top: 10px; line-height: 1.45;">
+            Custom voice with a Mediterranean lean. Bouzouki + sub layers. A signature sound design across rooms, transitions, video.
+          </div>
+        </div>
+
+        <div style="background: var(--paper); padding: 22px; box-shadow: 0 18px 36px rgba(26,22,18,0.10);">
+          <div class="kicker" style="color: var(--ink-mute);">03 · BITS</div>
+          <div class="title-s" style="font-size: 22px; margin-top: 10px;">Jokes, on rails.</div>
+          <div class="body-s" style="color: var(--ink-3); margin-top: 10px; line-height: 1.45;">
+            A library of inside jokes, callbacks, mock prophecies, awards bits — pre-written and rehearsed. Funny because it's tight, not because it's improv.
+          </div>
+        </div>
+
+        <div style="background: var(--paper); padding: 22px; box-shadow: 0 18px 36px rgba(26,22,18,0.10);">
+          <div class="kicker" style="color: var(--ink-mute);">04 · ANIMATION</div>
+          <div class="title-s" style="font-size: 22px; margin-top: 10px;">A god that moves.</div>
+          <div class="body-s" style="color: var(--ink-3); margin-top: 10px; line-height: 1.45;">
+            Hero animated character — bust → full body, lipsynced, reactive. Lives on the LED wall, pops up between sessions, owns the stage.
+          </div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>SCRIPT · VOICE · BITS · ANIMATION</span>
+        <span>12</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 13 — TEAMBUILDING (Option 1)                 -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="13 Sail &amp; celebrate (Option 1)">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/champagne-yacht-collage.png" alt="">
+    <!-- soft top wash so the title card reads cleanly; the catamaran &amp; villa stay vivid -->
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(245,239,228,0.35) 0%, rgba(245,239,228,0.0) 35%, rgba(245,239,228,0.0) 100%);"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>13 · SAIL &amp; CELEBRATE</span>
+        <span>OPTION 01 · 350 PAX ON THE WAVE</span>
+      </div>
+
+      <!-- title card, top-left strip — sits on the open sand area, leaves catamaran/palm/amphora visible -->
+      <div style="position: absolute; left: 56px; top: 110px; max-width: 820px;">
+        <div style="background: rgba(245,239,228,0.94); padding: 22px 28px; box-shadow: 0 18px 36px rgba(26,22,18,0.18); display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center;">
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 108px; line-height: 0.85; letter-spacing: -0.04em; color: var(--ink-0);">01</div>
+          <div>
+            <span class="lime-tape">OPTION 01 · HERO</span>
+            <div style="display: flex; align-items: baseline; gap: 16px; margin-top: 10px;">
+              <span class="numarker">13</span>
+              <h2 class="title-xl" style="font-size: 42px; line-height: 1.05; color: var(--ink-0);">Champagne on<br>the <span style="background: var(--lime); padding: 2px 12px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">wave</span>.</h2>
+            </div>
+            <div style="margin-top: 10px; color: var(--ink-3); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.45; max-width: 540px;">
+              Tunics on, fleet out. Beach drop with mezze, sabrage at sundown.
+            </div>
+            <!-- inline stats: ~5h · 350 pax — single row of mono labels + values -->
+            <div style="margin-top: 12px; display: flex; gap: 22px; align-items: baseline; padding-top: 10px; border-top: 1px solid rgba(10,10,8,0.18);">
+              <div>
+                <span class="mono-s" style="color: var(--ink-mute); font-size: 11px;">DURATION</span>
+                <span style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 22px; color: var(--ink-0); margin-left: 8px;">3h</span>
+              </div>
+              <div style="width: 1px; align-self: stretch; background: rgba(10,10,8,0.15);"></div>
+              <div>
+                <span class="mono-s" style="color: var(--ink-mute); font-size: 11px;">FLEET</span>
+                <span style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 22px; color: var(--ink-0); margin-left: 8px;">8 × 40 pax</span>
+              </div>
+              <div style="width: 1px; align-self: stretch; background: rgba(10,10,8,0.15);"></div>
+              <div>
+                <span class="mono-s" style="color: var(--ink-mute); font-size: 11px;">CAPACITY</span>
+                <span style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 22px; color: var(--ink-0); margin-left: 8px;">TBD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>OPTION 01 · YACHTS · WEATHER PLAN B BUILT-IN</span>
+        <span>13</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 13 — OPTION 02 · GASTROMUSEUM DINNER          -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="14 Gastromuseum dinner (Option 2)">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/14-dinner-museum-collage.png" alt="">
+    <!-- soft top wash so the title card reads cleanly; dishes stay vivid -->
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(245,239,228,0.35) 0%, rgba(245,239,228,0.0) 35%, rgba(245,239,228,0.0) 100%);"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>14 · GASTROMUSEUM</span>
+        <span>OPTION 02 · GREEK PRODUCTS · ON-TABLE TASTINGS</span>
+      </div>
+
+      <!-- title card, centered horizontal band above the pedestals — sits in the open hall area, doesn't cover the corner stickers or dishes -->
+      <div style="position: absolute; left: 50%; top: 38%; transform: translate(-50%, -50%); max-width: 920px; width: calc(100% - 320px);">
+        <div style="background: rgba(245,239,228,0.92); padding: 22px 32px; box-shadow: 0 18px 36px rgba(26,22,18,0.22); display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center; backdrop-filter: blur(2px);">
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 108px; line-height: 0.85; letter-spacing: -0.04em; color: var(--ink-0);">02</div>
+          <div>
+            <span class="lime-tape">OPTION 02 · ALTERNATE</span>
+            <div style="display: flex; align-items: baseline; gap: 16px; margin-top: 10px;">
+              <span class="numarker">14</span>
+              <h2 class="title-xl" style="font-size: 42px; line-height: 1.05; color: var(--ink-0);">Dinner is the <span style="background: var(--lime); padding: 2px 12px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">museum</span>.</h2>
+            </div>
+            <div style="margin-top: 10px; color: var(--ink-3); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.45; max-width: 620px;">
+              Eating is the most Greek thing there is. Tasting of Greek dishes, products and wines — and we party like it's Olympus.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>OPTION 02 · GASTROMUSEUM · TASTINGS · LONG TABLES</span>
+        <span>14</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 15 — OPTION 03 · SUP TOUR                     -->
+  <!-- ============================================ -->
+  <section class="slide dark" data-screen-label="15 SUP tour (Option 3)">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/31-sup-gods-collage.png" alt="">
+    <!-- bottom wash so the title strip reads cleanly without darkening the figures -->
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(10,10,8,0.0) 0%, rgba(10,10,8,0.0) 60%, rgba(10,10,8,0.35) 100%);"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top" style="color: var(--plaster-0);">
+        <span><span class="dot" style="background: var(--lime);"></span>15 · SUP TOUR</span>
+        <span>OPTION 03 · STAND-UP PADDLE · COASTAL LINE</span>
+      </div>
+
+      <!-- title card, bottom-left strip — sits below the figures, doesn't cover them -->
+      <div style="position: absolute; left: 96px; bottom: 110px; max-width: 820px;">
+        <div style="background: rgba(245,239,228,0.94); padding: 22px 28px; box-shadow: 0 18px 36px rgba(0,0,0,0.32); display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center;">
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 108px; line-height: 0.85; letter-spacing: -0.04em; color: var(--ink-0);">03</div>
+          <div>
+            <span class="lime-tape">OPTION 03 · ACTIVE</span>
+            <div style="display: flex; align-items: baseline; gap: 16px; margin-top: 10px;">
+              <span class="numarker">15</span>
+              <h2 class="title-xl" style="font-size: 42px; line-height: 1.05; color: var(--ink-0);">Stand up. Read<br>the <span style="background: var(--lime); padding: 2px 12px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">wave</span>.</h2>
+            </div>
+            <!-- inline stats: 2h · 120 pax / wave — single row of mono labels + values -->
+            <div style="margin-top: 12px; display: flex; gap: 22px; align-items: baseline; padding-top: 10px; border-top: 1px solid rgba(10,10,8,0.18);">
+              <div>
+                <span class="mono-s" style="color: var(--ink-mute); font-size: 11px;">DURATION</span>
+                <span style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 22px; color: var(--ink-0); margin-left: 8px;">2h</span>
+              </div>
+              <div style="width: 1px; align-self: stretch; background: rgba(10,10,8,0.15);"></div>
+              <div>
+                <span class="mono-s" style="color: var(--ink-mute); font-size: 11px;">CAPACITY</span>
+                <span style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 22px; color: var(--ink-0); margin-left: 8px;">120 pax / wave</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom" style="color: var(--plaster-0);">
+        <span>OPTION 03 · SUP · COASTAL LINE · TWO WAVES</span>
+        <span>15</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 16 — OPTION 04 · CUSTOM ENTREPRENEUR TOUR     -->
+  <!-- ============================================ -->
+  <section class="slide dark" data-screen-label="16 On-the-wave tour (Option 4)">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/30-athens-tour-collage.png" alt="">
+    <!-- left-side wash so the title card reads cleanly without darkening the statue -->
+    <div style="position:absolute; inset:0; background: linear-gradient(90deg, rgba(10,10,8,0.55) 0%, rgba(10,10,8,0.25) 35%, rgba(10,10,8,0.0) 55%, rgba(10,10,8,0.0) 100%);"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top" style="color: var(--plaster-0);">
+        <span><span class="dot" style="background: var(--lime);"></span>16 · ON-THE-WAVE TOUR</span>
+        <span>OPTION 04 · CUSTOM · ENTREPRENEURIAL LENS</span>
+      </div>
+
+      <!-- title card, top-left — leaves the statue visible on the right -->
+      <div style="position: absolute; left: 96px; top: 110px; max-width: 760px;">
+        <div style="background: rgba(245,239,228,0.94); padding: 24px 30px; box-shadow: 0 18px 36px rgba(0,0,0,0.32); display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: stretch;">
+          <!-- big 04 numeral, mirrors options 01-03 -->
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 132px; line-height: 0.85; letter-spacing: -0.04em; color: var(--ink-0); align-self: center;">04</div>
+          <div>
+            <span class="lime-tape">OPTION 04 · CURATED</span>
+            <div style="display: flex; align-items: baseline; gap: 18px; margin-top: 12px;">
+              <span class="numarker">16</span>
+              <h2 class="title-xl" style="font-size: 50px; line-height: 1.05; color: var(--ink-0);">Greece, through<br>an <span style="background: var(--lime); padding: 2px 12px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">owner's</span> eyes.</h2>
+            </div>
+          </div>
+        </div>
+        <!-- subtitle as separate strip below the card so it doesn't widen it -->
+        <div style="margin-top: 12px; max-width: 620px; background: rgba(10,10,8,0.55); padding: 14px 22px; color: var(--plaster-0); font-family: 'Inter', sans-serif; font-size: 19px; line-height: 1.5; backdrop-filter: blur(4px);">
+          For the history-obsessed who'd rather read the city as a story about the people who kept it on the wave.
+        </div>
+      </div>
+
+      <!-- stats — bottom-left, on dark wash, statue stays clear on the right -->
+      <div style="position: absolute; left: 96px; bottom: 130px; display: flex; gap: 14px; align-items: stretch;">
+        <div style="background: var(--lime); color: var(--ink-0); padding: 18px 24px; box-shadow: 0 18px 36px rgba(0,0,0,0.32);">
+          <div class="mono-s" style="color: rgba(10,10,8,0.6);">DURATION</div>
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 52px; line-height: 1; margin-top: 4px;">3h</div>
+        </div>
+        <div style="background: rgba(245,239,228,0.94); color: var(--ink-0); padding: 18px 24px; box-shadow: 0 18px 36px rgba(0,0,0,0.32);">
+          <div class="mono-s" style="color: var(--ink-mute);">GROUPS</div>
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 52px; line-height: 1; margin-top: 4px;">15 × 8</div>
+          <div class="mono-s" style="color: var(--ink-mute); margin-top: 4px; font-size: 11px;">PAX · GROUPS</div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom" style="color: var(--plaster-0);">
+        <span>OPTION 04 · CUSTOM · BRIEFED NARRATORS</span>
+        <span>16</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 17 — FINAL PARTY · TASOS STAMOU              -->
+  <!-- ============================================ -->
+  <section class="slide dark" data-screen-label="17 Final party — Tasos Stamou">
+    <!-- hero photo · Tasos Stamou at the desk -->
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/set-design/tasos-stamou.jpg" alt="Tasos Stamou" style="object-position: center;">
+    <!-- right-side wash so the title card reads cleanly without darkening the artist on the left -->
+    <div style="position:absolute; inset:0; background: linear-gradient(270deg, rgba(10,10,8,0.65) 0%, rgba(10,10,8,0.35) 35%, rgba(10,10,8,0.0) 60%, rgba(10,10,8,0.0) 100%);"></div>
+
+    <div class="slide-content pad">
+      <div class="chrome-top" style="color: var(--plaster-0);">
+        <span><span class="dot" style="background: var(--lime);"></span>17 · FINAL PARTY</span>
+        <span>SEASIDE · COCKTAILS · ELECTRONIC SET</span>
+      </div>
+
+      <!-- title card, top-right (mirror of 16) -->
+      <div style="position: absolute; right: 96px; top: 110px; max-width: 760px;">
+        <div style="background: rgba(245,239,228,0.94); padding: 24px 30px; box-shadow: 0 18px 36px rgba(0,0,0,0.32); display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: stretch;">
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 132px; line-height: 0.85; letter-spacing: -0.04em; color: var(--ink-0); align-self: center;">17</div>
+          <div>
+            <span class="lime-tape">FINAL PARTY · SEND-OFF</span>
+            <div style="display: flex; align-items: baseline; gap: 18px; margin-top: 12px;">
+              <span class="numarker">17</span>
+              <h2 class="title-xl" style="font-size: 50px; line-height: 1.05; color: var(--ink-0);">A light cocktail<br>night <span style="background: var(--lime); padding: 2px 12px; box-decoration-break: clone; -webkit-box-decoration-break: clone;">on the sea</span>.</h2>
+            </div>
+          </div>
+        </div>
+        <!-- subtitle strip -->
+        <div style="margin-top: 12px; max-width: 620px; margin-left: auto; background: rgba(10,10,8,0.55); padding: 14px 22px; color: var(--plaster-0); font-family: 'Inter', sans-serif; font-size: 19px; line-height: 1.5; backdrop-filter: blur(4px);">
+          A breezy seaside cocktail party — soft light, low chairs, no stage, salt air. Electronic set by <strong style="color: var(--lime);">Tasos Stamou</strong>, a pioneer of the modern Greek electronic scene.
+        </div>
+      </div>
+
+      <!-- artist card, bottom-right -->
+      <div style="position: absolute; right: 96px; bottom: 130px; display: flex; gap: 14px; align-items: stretch;">
+        <div style="background: rgba(245,239,228,0.94); color: var(--ink-0); padding: 18px 24px; box-shadow: 0 18px 36px rgba(0,0,0,0.32);">
+          <div class="mono-s" style="color: var(--ink-mute);">ARTIST</div>
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 32px; line-height: 1; margin-top: 6px;">Tasos Stamou</div>
+          <div class="mono-s" style="color: var(--ink-mute); margin-top: 6px; font-size: 11px;">PIONEER · MODERN GREEK ELECTRONIC</div>
+        </div>
+        <div style="background: var(--lime); color: var(--ink-0); padding: 18px 24px; box-shadow: 0 18px 36px rgba(0,0,0,0.32);">
+          <div class="mono-s" style="color: rgba(10,10,8,0.6);">FORMAT</div>
+          <div style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 32px; line-height: 1; margin-top: 6px;">Cocktails</div>
+          <div class="mono-s" style="color: rgba(10,10,8,0.6); margin-top: 6px; font-size: 11px;">LIGHT · SEASIDE · NO STAGE</div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom" style="color: var(--plaster-0);">
+        <span>SEND-OFF NIGHT · SOFT EXIT FROM THE WAVE</span>
+        <span>17</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 18 — BUDGET %                                -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="18 Budget">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/19-postcard-amphora.png" alt="">
+    <!-- soft wash, keeps colour visible behind content card -->
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(245,239,228,0.0) 0%, rgba(245,239,228,0.15) 60%, rgba(245,239,228,0.32) 100%);"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>17 · BUDGET</span>
+        <span>RELATIVE % · TOTAL TBC</span>
+      </div>
+
+      <!-- compact title card on plaster -->
+      <div style="margin-top: 140px; background: rgba(245,239,228,0.92); padding: 16px 24px; display: inline-flex; align-items: baseline; gap: 22px; box-shadow: 0 18px 36px rgba(26,22,18,0.14);">
+        <span class="numarker" style="font-size: 28px;">18</span>
+        <h2 class="title-xl" style="font-size: 44px; line-height: 1;">Where the money goes.</h2>
+      </div>
+
+      <!-- bar + legend on plaster panel for legibility on the colour bg -->
+      <div style="margin-top: 60px; background: rgba(245,239,228,0.92); padding: 36px 40px; box-shadow: 0 18px 36px rgba(26,22,18,0.12);">
+        <!-- horizontal stacked bar -->
+        <div style="display: flex; height: 80px; border: 1px solid var(--ink-1); position: relative;">
+          <div style="flex: 60; background: var(--ink-0); display: flex; align-items: center; justify-content: center; color: var(--plaster-0); font-family: 'Inter', sans-serif; font-weight: 900; font-size: 28px;">60%</div>
+          <div style="flex: 15; background: var(--lime); display: flex; align-items: center; justify-content: center; color: var(--ink-0); font-family: 'Inter', sans-serif; font-weight: 900; font-size: 28px;">15%</div>
+          <div style="flex: 15; background: var(--terracotta); display: flex; align-items: center; justify-content: center; color: var(--plaster-0); font-family: 'Inter', sans-serif; font-weight: 900; font-size: 28px;">15%</div>
+          <div style="flex: 10; background: var(--olive); display: flex; align-items: center; justify-content: center; color: var(--plaster-0); font-family: 'Inter', sans-serif; font-weight: 900; font-size: 26px;">10%</div>
+        </div>
+
+        <!-- legend -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 32px;">
+          <div class="bud-leg"><div class="bud-sw" style="background: var(--ink-0);"></div><div><div class="title-s" style="font-size: 20px;">Venue + F&amp;B</div><div class="mono-s" style="color: var(--ink-mute);">Hotel, all-inclusive catering</div></div></div>
+          <div class="bud-leg"><div class="bud-sw" style="background: var(--lime);"></div><div><div class="title-s" style="font-size: 20px;">Production</div><div class="mono-s" style="color: var(--ink-mute);">Decor, welcome packs, set design</div></div></div>
+          <div class="bud-leg"><div class="bud-sw" style="background: var(--terracotta);"></div><div><div class="title-s" style="font-size: 20px;">Activities</div><div class="mono-s" style="color: var(--ink-mute);">Teambuilding, tours, final party</div></div></div>
+          <div class="bud-leg"><div class="bud-sw" style="background: var(--olive);"></div><div><div class="title-s" style="font-size: 20px;">Management + creative</div><div class="mono-s" style="color: var(--ink-mute);">Producing, scripting, art direction</div></div></div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>SHARE · NOT EUROS · TOTAL TBC POST-RFP</span>
+        <span>18</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 18 — ROADMAP                                 -->
+  <!-- ============================================ -->
+  <section class="slide" data-screen-label="19 Roadmap">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/22-collage-pool-artifacts.png" alt="">
+    <!-- very light wash, lets the collage breathe at the edges -->
+    <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(245,239,228,0.0) 0%, rgba(245,239,228,0.18) 60%, rgba(245,239,228,0.32) 100%);"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top">
+        <span><span class="dot"></span>18 · ROADMAP</span>
+        <span>NOW → OCT 2026</span>
+      </div>
+
+      <!-- title block on plaster card so it pops on collage -->
+      <div style="margin-top: 40px; background: rgba(245,239,228,0.92); padding: 28px 32px; display: inline-block; box-shadow: 0 18px 36px rgba(26,22,18,0.10);">
+        <div style="display: flex; align-items: baseline; gap: 28px;">
+          <span class="numarker">19</span>
+          <h2 class="title-xl">Eleven steps<br>to the coast.</h2>
+        </div>
+      </div>
+
+      <!-- horizontal timeline: 7-col grid, each cell = month / dot / label -->
+      <div style="margin-top: 80px; position: relative; padding: 56px 56px 48px; background: rgba(245,239,228,0.92); box-shadow: 0 18px 36px rgba(26,22,18,0.12);">
+        <div style="display: grid; grid-template-columns: repeat(7, 1fr); position: relative;">
+
+          <!-- continuous rail behind the dots -->
+          <div style="position: absolute; left: calc(100%/14); right: calc(100%/14); top: 44px; height: 2px; background: linear-gradient(90deg, var(--ink-1) 0%, var(--ink-1) 50%, var(--lime) 50%, var(--lime) 80%, var(--terracotta) 80%, var(--terracotta) 92%, var(--lime) 92%, var(--lime) 100%); pointer-events: none;"></div>
+
+          <!-- 7 cells -->
+          <div class="rm-cell"><div class="rm-month">May</div><div class="rm-dot" style="background: var(--ink-0);"></div><div class="rm-step"><strong>Hotel locked</strong><br>+ contract signed</div></div>
+          <div class="rm-cell"><div class="rm-month">Jun</div><div class="rm-dot" style="background: var(--ink-0);"></div><div class="rm-step"><strong>Concept v2</strong><br>+ creative deck</div></div>
+          <div class="rm-cell"><div class="rm-month">Jul</div><div class="rm-dot" style="background: var(--ink-0);"></div><div class="rm-step"><strong>Pax registration</strong><br>opens · flights briefed</div></div>
+          <div class="rm-cell"><div class="rm-month">Aug</div><div class="rm-dot rm-dot-lg" style="background: var(--lime);"></div><div class="rm-step"><strong>Production design</strong><br>+ stage, light, AV</div></div>
+          <div class="rm-cell"><div class="rm-month">Sep</div><div class="rm-dot rm-dot-lg" style="background: var(--lime);"></div><div class="rm-step"><strong>Site visit</strong><br>+ rehearsal day</div></div>
+          <div class="rm-cell"><div class="rm-month">Early Oct</div><div class="rm-dot rm-dot-lg" style="background: var(--terracotta);"></div><div class="rm-step"><strong>Crew on ground</strong><br>setup begins</div></div>
+          <div class="rm-cell"><div class="rm-month" style="color: var(--terracotta);">Oct 2026</div><div class="rm-dot rm-dot-xl" style="background: var(--lime); box-shadow: 0 0 0 6px rgba(242,255,84,0.45);"></div><div class="rm-step"><strong style="font-size: 18px;">EVENT.</strong><br>4 days · 350 pax</div></div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <span>~5 MONTHS TO LOCK</span>
+        <span>19</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 19 — CRUISE 2027 BACKUP                      -->
+  <!-- ============================================ -->
+  <section class="slide dark" data-screen-label="20 Cruise 2027">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/32-windsurf-collage.png" alt="">
+    <div class="slide-content pad">
+      <div class="chrome-top" style="color: rgba(10,10,8,0.65);">
+        <span><span class="dot"></span>19 · 2027 BACKUP</span>
+        <span>FUTURE OPTION · NOT 2026</span>
+      </div>
+
+      <!-- minimal text card, top-left, covers stray collage type + part of the masts -->
+      <div style="position: absolute; left: 96px; top: 110px; max-width: 480px; background: rgba(10,10,8,0.86); padding: 32px 36px; box-shadow: 0 24px 48px rgba(0,0,0,0.35);">
+        <span class="lime-tape" style="display: inline-block;">WIND SURF · 2027</span>
+        <h2 class="title-xl" style="color: var(--plaster-0); font-size: 64px; line-height: 0.95; margin-top: 18px;">A 5-mast<br>sailing yacht.</h2>
+        <div class="body-m" style="color: rgba(245,239,228,0.82); margin-top: 22px;">
+          156 cabins, ~310 pax, whole-ship buyout. Aegean route, full board.
+        </div>
+        <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(245,239,228,0.18);">
+          <div class="kicker" style="color: var(--lime);">BOOKABLE</div>
+          <div class="body-m" style="color: var(--plaster-0); margin-top: 4px;">For Oct 2027 — talks open Q3 2026.</div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom" style="color: rgba(10,10,8,0.65);">
+        <span>2027 OPTION · CONVERSATION OPENS Q3 2026</span>
+        <span>20</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 20 — CONTACTS                                -->
+  <!-- ============================================ -->
+  <section class="slide dark" data-screen-label="21 Contacts">
+    <img class="bg-fill" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/33-zeus-phone.png" alt="">
+    <!-- soft gradient on the right where Zeus & holographic shimmer sit, keeps left text breathing room -->
+    <div style="position:absolute; inset:0; background: linear-gradient(90deg, rgba(10,10,8,0.55) 0%, rgba(10,10,8,0.25) 35%, rgba(10,10,8,0.0) 60%);"></div>
+    <div class="slide-content pad">
+      <div class="chrome-top" style="color: var(--plaster-0);">
+        <span><span class="dot" style="background: var(--lime);"></span>20 · CONTACT</span>
+        <span>SUPERDUDES · ON THE WAVE</span>
+      </div>
+
+      <!-- minimal copy, top-left, lets Zeus dominate the frame -->
+      <div style="position: absolute; left: 96px; top: 180px; max-width: 720px; color: var(--plaster-0);">
+        <span class="lime-tape" style="display: inline-block;">WAITING ON THE WAVE</span>
+        <h2 class="title-xl" style="color: var(--plaster-0); font-size: 96px; line-height: 0.95; margin-top: 24px; letter-spacing: -0.02em;">Pick up<br>the phone.</h2>
+        <div class="body-l" style="color: rgba(245,239,228,0.85); margin-top: 32px; max-width: 520px;">
+          Whenever you're ready — we're already in our office chair, scrolling the Aegean.
+        </div>
+      </div>
+
+      <!-- email anchored bottom-left, hero-sized -->
+      <div style="position: absolute; left: 96px; bottom: 130px; display: flex; align-items: center; gap: 22px;">
+        <span style="background: var(--lime); color: var(--ink-0); padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700;">WRITE</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 44px; font-weight: 700; color: var(--plaster-0); letter-spacing: -0.01em;">new@superdudes.agency</span>
+      </div>
+
+      <div class="chrome-bottom" style="color: var(--plaster-0);">
+        <span>SUPERDUDES.AGENCY</span>
+        <span>21</span>
+      </div>
+    </div>
+  </section>
+
+
+</deck-stage>
+
+<!-- hotels component removed — slide 05 is now a title slide -->
+<script type="text/babel" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/components/hotel-cards.jsx"></script>
+<script type="text/babel" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/components/tweaks-panel.jsx"></script>
+<script type="text/babel" src="https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/components/tweaks-mount.jsx"></script>
+
+</body>
+</html>

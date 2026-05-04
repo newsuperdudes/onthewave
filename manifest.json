@@ -1,0 +1,525 @@
+{
+  "assets": [
+    {
+      "path": "assets/coinspaid-logo.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/coinspaid-logo.png",
+      "size": 4735
+    },
+    {
+      "path": "assets/frame-vintage-801.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/frame-vintage-801.png",
+      "size": 2587133
+    },
+    {
+      "path": "assets/frame-vintage-cream.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/frame-vintage-cream.png",
+      "size": 2502145
+    },
+    {
+      "path": "assets/option-dinner-museum.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/option-dinner-museum.png",
+      "size": 2927264
+    },
+    {
+      "path": "assets/polaroid-frame-2.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/polaroid-frame-2.png",
+      "size": 641822
+    },
+    {
+      "path": "assets/polaroid-frame.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/polaroid-frame.png",
+      "size": 1022503
+    },
+    {
+      "path": "assets/team/david.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/team/david.png",
+      "size": 2079148
+    },
+    {
+      "path": "assets/team/dertev.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/team/dertev.png",
+      "size": 1999265
+    },
+    {
+      "path": "assets/team/lisa.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/team/lisa.png",
+      "size": 2118218
+    },
+    {
+      "path": "assets/team/nik.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/team/nik.png",
+      "size": 2023361
+    },
+    {
+      "path": "assets/team/sasha.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/team/sasha.png",
+      "size": 2178813
+    },
+    {
+      "path": "assets/team/vlad.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/team/vlad.png",
+      "size": 1981406
+    },
+    {
+      "path": "assets/torn-paper-tape-strip.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/torn-paper-tape-strip.png",
+      "size": 2846281
+    },
+    {
+      "path": "assets/welcome-box.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/welcome-box.png",
+      "size": 2680793
+    },
+    {
+      "path": "assets/welcome-crocs.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/welcome-crocs.png",
+      "size": 2670094
+    },
+    {
+      "path": "assets/welcome-keychain.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/welcome-keychain.png",
+      "size": 1647329
+    },
+    {
+      "path": "assets/welcome-postcard.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/welcome-postcard.png",
+      "size": 2693260
+    },
+    {
+      "path": "backgrounds/01-stone-sea.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/01-stone-sea.png",
+      "size": 2514691
+    },
+    {
+      "path": "backgrounds/02-sail-sea.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/02-sail-sea.png",
+      "size": 2209352
+    },
+    {
+      "path": "backgrounds/03-stone-shadow.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/03-stone-shadow.png",
+      "size": 2528117
+    },
+    {
+      "path": "backgrounds/04-sea-view.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/04-sea-view.png",
+      "size": 2330590
+    },
+    {
+      "path": "backgrounds/05-greece-collage.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/05-greece-collage.png",
+      "size": 2912746
+    },
+    {
+      "path": "backgrounds/06-collage-coinspaid.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/06-collage-coinspaid.png",
+      "size": 2964150
+    },
+    {
+      "path": "backgrounds/07-postcard-greece.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/07-postcard-greece.png",
+      "size": 2664769
+    },
+    {
+      "path": "backgrounds/08-collage-artifacts.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/08-collage-artifacts.png",
+      "size": 2856381
+    },
+    {
+      "path": "backgrounds/09-stone-tiles.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/09-stone-tiles.png",
+      "size": 2555092
+    },
+    {
+      "path": "backgrounds/10-table-lemons.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/10-table-lemons.png",
+      "size": 2555362
+    },
+    {
+      "path": "backgrounds/11-sunset-aegean.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/11-sunset-aegean.png",
+      "size": 2871541
+    },
+    {
+      "path": "backgrounds/12-sand-stickers.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/12-sand-stickers.png",
+      "size": 2771391
+    },
+    {
+      "path": "backgrounds/13-collage-statues.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/13-collage-statues.png",
+      "size": 3061512
+    },
+    {
+      "path": "backgrounds/14-dinner-museum-collage.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/14-dinner-museum-collage.png",
+      "size": 2927264
+    },
+    {
+      "path": "backgrounds/14-village-warm.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/14-village-warm.png",
+      "size": 2669658
+    },
+    {
+      "path": "backgrounds/15-terrace-vase.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/15-terrace-vase.png",
+      "size": 2202694
+    },
+    {
+      "path": "backgrounds/16-coast-road.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/16-coast-road.png",
+      "size": 2703675
+    },
+    {
+      "path": "backgrounds/17-terrace-canopy.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/17-terrace-canopy.png",
+      "size": 2364809
+    },
+    {
+      "path": "backgrounds/18-pool-team-badge.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/18-pool-team-badge.png",
+      "size": 2569691
+    },
+    {
+      "path": "backgrounds/19-postcard-amphora.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/19-postcard-amphora.png",
+      "size": 2821039
+    },
+    {
+      "path": "backgrounds/20-collage-summer-state.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/20-collage-summer-state.png",
+      "size": 2844064
+    },
+    {
+      "path": "backgrounds/21-stone-stairs.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/21-stone-stairs.png",
+      "size": 2527291
+    },
+    {
+      "path": "backgrounds/22-collage-pool-artifacts.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/22-collage-pool-artifacts.png",
+      "size": 3043541
+    },
+    {
+      "path": "backgrounds/23-collage-offsite-grc.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/23-collage-offsite-grc.png",
+      "size": 2972908
+    },
+    {
+      "path": "backgrounds/24-olive-shadow.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/24-olive-shadow.png",
+      "size": 2596900
+    },
+    {
+      "path": "backgrounds/25-collage-bust-runners.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/25-collage-bust-runners.png",
+      "size": 2894157
+    },
+    {
+      "path": "backgrounds/26-wood-table-shadow.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/26-wood-table-shadow.png",
+      "size": 2974484
+    },
+    {
+      "path": "backgrounds/27-collage-frame-stucco.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/27-collage-frame-stucco.png",
+      "size": 2958548
+    },
+    {
+      "path": "backgrounds/28-collage-summer-postcard.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/28-collage-summer-postcard.png",
+      "size": 2948912
+    },
+    {
+      "path": "backgrounds/29-stone-flatlay-lemons.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/29-stone-flatlay-lemons.png",
+      "size": 2962471
+    },
+    {
+      "path": "backgrounds/30-athens-tour-collage.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/30-athens-tour-collage.png",
+      "size": 3088524
+    },
+    {
+      "path": "backgrounds/31-sup-gods-collage.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/31-sup-gods-collage.png",
+      "size": 3028598
+    },
+    {
+      "path": "backgrounds/32-windsurf-collage.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/32-windsurf-collage.png",
+      "size": 3040662
+    },
+    {
+      "path": "backgrounds/33-zeus-phone.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/33-zeus-phone.png",
+      "size": 2485883
+    },
+    {
+      "path": "backgrounds/champagne-yacht-collage.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/backgrounds/champagne-yacht-collage.png",
+      "size": 3189624
+    },
+    {
+      "path": "components/Hotels.jsx",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/components/Hotels.jsx",
+      "size": 12975
+    },
+    {
+      "path": "components/hotel-cards.export.jsx",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/components/hotel-cards.export.jsx",
+      "size": 38048
+    },
+    {
+      "path": "components/hotel-cards.jsx",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/components/hotel-cards.jsx",
+      "size": 33604
+    },
+    {
+      "path": "components/tweaks-mount.jsx",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/components/tweaks-mount.jsx",
+      "size": 2371
+    },
+    {
+      "path": "components/tweaks-panel.jsx",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/components/tweaks-panel.jsx",
+      "size": 18440
+    },
+    {
+      "path": "hotel-photos/evereden/01-pool-sea.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/evereden/01-pool-sea.png",
+      "size": 1185856
+    },
+    {
+      "path": "hotel-photos/evereden/02-facade-arches.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/evereden/02-facade-arches.png",
+      "size": 950809
+    },
+    {
+      "path": "hotel-photos/evereden/03-terrace-lounge.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/evereden/03-terrace-lounge.png",
+      "size": 573348
+    },
+    {
+      "path": "hotel-photos/evereden/04-suite-seaview.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/evereden/04-suite-seaview.png",
+      "size": 738727
+    },
+    {
+      "path": "hotel-photos/evereden/05-conference.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/evereden/05-conference.png",
+      "size": 757480
+    },
+    {
+      "path": "hotel-photos/lagonissi/01-aerial-peninsula.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/lagonissi/01-aerial-peninsula.png",
+      "size": 785162
+    },
+    {
+      "path": "hotel-photos/lagonissi/02-suite-seaview.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/lagonissi/02-suite-seaview.png",
+      "size": 629711
+    },
+    {
+      "path": "hotel-photos/lagonissi/03-terrace-sunset.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/lagonissi/03-terrace-sunset.png",
+      "size": 777980
+    },
+    {
+      "path": "hotel-photos/lagonissi/04-grand-hall.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/lagonissi/04-grand-hall.png",
+      "size": 3085104
+    },
+    {
+      "path": "hotel-photos/lagonissi/05-ballroom.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/lagonissi/05-ballroom.png",
+      "size": 822799
+    },
+    {
+      "path": "hotel-photos/laguna/01-pool-palace.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/laguna/01-pool-palace.png",
+      "size": 844966
+    },
+    {
+      "path": "hotel-photos/laguna/02-spa-pool.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/laguna/02-spa-pool.png",
+      "size": 3742971
+    },
+    {
+      "path": "hotel-photos/laguna/03-suite-poolview.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/laguna/03-suite-poolview.png",
+      "size": 1375431
+    },
+    {
+      "path": "hotel-photos/laguna/04-terrace-jacuzzi.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/laguna/04-terrace-jacuzzi.png",
+      "size": 2098239
+    },
+    {
+      "path": "hotel-photos/laguna/05-lounge-sunset.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/laguna/05-lounge-sunset.png",
+      "size": 955104
+    },
+    {
+      "path": "hotel-photos/rinela/01-aerial-beach.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/rinela/01-aerial-beach.png",
+      "size": 919829
+    },
+    {
+      "path": "hotel-photos/rinela/02-pool-reflection.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/rinela/02-pool-reflection.png",
+      "size": 911494
+    },
+    {
+      "path": "hotel-photos/rinela/03-suite-seaview.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/rinela/03-suite-seaview.png",
+      "size": 672699
+    },
+    {
+      "path": "hotel-photos/rinela/04-cabana-pool.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/rinela/04-cabana-pool.png",
+      "size": 2016577
+    },
+    {
+      "path": "hotel-photos/rinela/05-palms-pool.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/rinela/05-palms-pool.png",
+      "size": 254190
+    },
+    {
+      "path": "hotel-photos/sani/01-pool-sea-dusk.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/sani/01-pool-sea-dusk.png",
+      "size": 731410
+    },
+    {
+      "path": "hotel-photos/sani/02-beach-bar.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/sani/02-beach-bar.png",
+      "size": 2639398
+    },
+    {
+      "path": "hotel-photos/sani/03-lobby-bar.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/sani/03-lobby-bar.png",
+      "size": 423588
+    },
+    {
+      "path": "hotel-photos/sani/04-restaurant-garden.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/sani/04-restaurant-garden.png",
+      "size": 394566
+    },
+    {
+      "path": "hotel-photos/zeus/01-aerial-pools.jpg",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/zeus/01-aerial-pools.jpg",
+      "size": 414003
+    },
+    {
+      "path": "hotel-photos/zeus/02-firepits-sea.jpg",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/zeus/02-firepits-sea.jpg",
+      "size": 409597
+    },
+    {
+      "path": "hotel-photos/zeus/03-balcony-seaview.jpg",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/zeus/03-balcony-seaview.jpg",
+      "size": 218796
+    },
+    {
+      "path": "hotel-photos/zeus/04-suite-lounge.jpg",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/zeus/04-suite-lounge.jpg",
+      "size": 680527
+    },
+    {
+      "path": "hotel-photos/zeus/05-bedroom-arch.jpg",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/hotel-photos/zeus/05-bedroom-arch.jpg",
+      "size": 578928
+    },
+    {
+      "path": "rooms/ai-host-screen.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/ai-host-screen.png",
+      "size": 2331385
+    },
+    {
+      "path": "rooms/app-on-the-wave.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/app-on-the-wave.png",
+      "size": 2619919
+    },
+    {
+      "path": "rooms/breakout-empty.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/breakout-empty.png",
+      "size": 822799
+    },
+    {
+      "path": "rooms/helpers-statue-hoodie.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/helpers-statue-hoodie.png",
+      "size": 3037210
+    },
+    {
+      "path": "rooms/plenary-coinspaid.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/plenary-coinspaid.png",
+      "size": 2623794
+    },
+    {
+      "path": "rooms/polaroid-frame.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/rooms/polaroid-frame.png",
+      "size": 2430585
+    },
+    {
+      "path": "set-design/cubes-hero.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/set-design/cubes-hero.png",
+      "size": 2293400
+    },
+    {
+      "path": "set-design/light-bars.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/set-design/light-bars.png",
+      "size": 2852104
+    },
+    {
+      "path": "set-design/olive-tree-hero.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/set-design/olive-tree-hero.png",
+      "size": 3004158
+    },
+    {
+      "path": "set-design/registration-bar.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/set-design/registration-bar.png",
+      "size": 2230790
+    },
+    {
+      "path": "set-design/tasos-stamou.jpg",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/set-design/tasos-stamou.jpg",
+      "size": 64383
+    },
+    {
+      "path": "set-design/welcome-board.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/set-design/welcome-board.png",
+      "size": 2857707
+    },
+    {
+      "path": "stickers/catamaran.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/stickers/catamaran.png",
+      "size": 2407716
+    },
+    {
+      "path": "stickers/marble-tablet-hubs.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/stickers/marble-tablet-hubs.png",
+      "size": 3232703
+    },
+    {
+      "path": "stickers/polaroid-real-frame-2.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/stickers/polaroid-real-frame-2.png",
+      "size": 641822
+    },
+    {
+      "path": "stickers/polaroid-real-frame.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/stickers/polaroid-real-frame.png",
+      "size": 1022503
+    },
+    {
+      "path": "stickers/sailboat-holo.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/stickers/sailboat-holo.png",
+      "size": 1554825
+    },
+    {
+      "path": "stickers/surfer-holo.png",
+      "url": "https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/stickers/surfer-holo.png",
+      "size": 3299977
+    }
+  ],
+  "total_bytes": 201237168
+}

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUPERDUDES × COINSPAID — On the wave.</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ihlyzizdnecykfqslxge.supabase.co" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: ""; position: fixed; inset: 0;
+      pointer-events: none; z-index: 9998;
+      opacity: .05;
+      background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    }
+
+    /* GATE */
+    #pw-gate, #loader, #ready {
+      position: fixed; inset: 0; z-index: 99999;
+      background: #000;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.5s ease;
+    }
+    #pw-gate.hidden, #loader.hidden, #ready.hidden { opacity: 0; pointer-events: none; }
+    #loader, #ready { display: none; }
+    #loader.show, #ready.show { display: flex; }
+
+    .pw-inner, .ld-inner, .rd-inner {
+      width: 90%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .pw-topline, .pw-bottomline, .ld-topline, .ld-bottomline, .rd-topline, .rd-bottomline {
+      width: 100%; height: 1px;
+      background: rgba(255,255,255,0.12);
+    }
+    .pw-topline { margin-bottom: 32px; animation: drawLine 1s cubic-bezier(0.77,0,.175,1) 0.1s both; transform-origin: left; }
+    .pw-bottomline { margin-top: 32px; }
+    .ld-topline, .rd-topline { margin-bottom: 32px; }
+    .ld-bottomline, .rd-bottomline { margin-top: 32px; }
+
+    @keyframes drawLine {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+
+    .pw-ref, .ld-ref, .rd-ref {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 0.5em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 20px;
+    }
+
+    .pw-title {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      line-height: 0.92;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .pw-title .accent {
+      font-style: italic;
+      background: #c8ff00;
+      color: #1a1612;
+      padding: 0 0.18em;
+      transform: skewX(-6deg);
+      display: inline-block;
+    }
+
+    .pw-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.32em; text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      margin-bottom: 36px;
+    }
+
+    .pw-subtitle {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.4em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 16px;
+    }
+
+    #pw-form { width: 100%; display: flex; flex-direction: column; }
+
+    #pw-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding: 14px 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px; font-weight: 500;
+      letter-spacing: 0.22em;
+      color: #fff;
+      outline: none; width: 100%;
+      transition: border-color 0.2s;
+      caret-color: #fff;
+    }
+    #pw-input:focus { border-bottom-color: rgba(255,255,255,0.7); }
+    #pw-input::placeholder {
+      color: rgba(255,255,255,0.18);
+      letter-spacing: 0.1em;
+      font-weight: 400;
+    }
+
+    .pw-err {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 0.38em; text-transform: uppercase;
+      color: rgba(255,90,90,0.85);
+      display: none; margin-top: 14px;
+    }
+    .pw-err.show { display: block; }
+
+    #pw-btn {
+      margin-top: 32px;
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 16px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 0.6em; text-transform: uppercase;
+      cursor: pointer;
+      width: 100%;
+      transition: opacity 0.15s;
+    }
+    #pw-btn:hover { opacity: 0.82; }
+
+    .pw-corner, .ld-corner, .rd-corner {
+      position: fixed;
+      bottom: 32px; right: 32px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px; font-weight: 500;
+      letter-spacing: 0.4em; text-transform: uppercase;
+      color: rgba(255,255,255,0.18);
+    }
+
+    /* LOADER */
+    .ld-title {
+      font-size: clamp(28px, 4.4vw, 44px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      line-height: 0.95;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .ld-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.32em; text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      margin-bottom: 36px;
+    }
+
+    .ld-bar {
+      width: 100%;
+      height: 2px;
+      background: rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .ld-fill {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 0%;
+      background: #c8ff00;
+      transition: width 0.25s ease-out;
+    }
+
+    .ld-stats {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .ld-pct { color: #c8ff00; }
+
+    /* READY */
+    .rd-title {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      line-height: 0.92;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .rd-title .accent {
+      font-style: italic;
+      background: #c8ff00;
+      color: #1a1612;
+      padding: 0 0.18em;
+      transform: skewX(-6deg);
+      display: inline-block;
+    }
+    .rd-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.32em; text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      margin-bottom: 32px;
+    }
+    #rd-btn {
+      background: #c8ff00;
+      color: #000;
+      border: none;
+      padding: 18px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px; font-weight: 800;
+      letter-spacing: 0.6em; text-transform: uppercase;
+      cursor: pointer;
+      width: 100%;
+      transition: opacity 0.15s;
+    }
+    #rd-btn:hover { opacity: 0.86; }
+  </style>
+</head>
+<body>
+
+  <!-- ========== STAGE 1 — PASSWORD GATE ========== -->
+  <div id="pw-gate">
+    <div class="pw-inner">
+      <div class="pw-topline"></div>
+      <div class="pw-ref">SD &middot; COINSPAID &middot; OFFSITE 2026</div>
+      <div class="pw-title">On the <span class="accent">wave</span>.</div>
+      <div class="pw-kicker">Greece &middot; OCT '26 &middot; Draft v01</div>
+      <div class="pw-subtitle">Введи ключ доступа</div>
+      <form id="pw-form" onsubmit="return false;">
+        <input type="password" id="pw-input" placeholder="_ _ _ _ _ _ _ _ _ _ _" autocomplete="off" autofocus />
+        <div class="pw-err" id="pw-err">// ACCESS DENIED</div>
+        <button type="submit" id="pw-btn">Initiate Access</button>
+      </form>
+      <div class="pw-bottomline"></div>
+    </div>
+    <div class="pw-corner">SUPERDUDES &middot; REALITY PROTOCOL</div>
+  </div>
+
+  <!-- ========== STAGE 2 — LOADER ========== -->
+  <div id="loader">
+    <div class="ld-inner">
+      <div class="ld-topline"></div>
+      <div class="ld-ref">// PRELOADING ASSETS</div>
+      <div class="ld-title">Setting the<br>scene&hellip;</div>
+      <div class="ld-sub">Загружаем 192 MB &middot; коллажи, фото отелей, полароиды</div>
+      <div class="ld-bar"><div class="ld-fill" id="ld-fill"></div></div>
+      <div class="ld-stats">
+        <span id="ld-counter">0 / 0</span>
+        <span class="ld-pct" id="ld-pct">0%</span>
+      </div>
+      <div class="ld-bottomline"></div>
+    </div>
+    <div class="ld-corner">SUPERDUDES &middot; REALITY PROTOCOL</div>
+  </div>
+
+  <!-- ========== STAGE 3 — READY ========== -->
+  <div id="ready">
+    <div class="rd-inner">
+      <div class="rd-topline"></div>
+      <div class="rd-ref">// READY</div>
+      <div class="rd-title">On the <span class="accent">wave</span>.</div>
+      <div class="rd-sub">All assets loaded &middot; tap to enter</div>
+      <button id="rd-btn">Enter the Deck</button>
+      <div class="rd-bottomline"></div>
+    </div>
+    <div class="rd-corner">SUPERDUDES &middot; REALITY PROTOCOL</div>
+  </div>
+
+  <script>
+  (function() {
+    'use strict';
+    var SESSION_KEY = 'sd_otw_auth_2026';
+    // Password hash (SHA-256 of 'zeusthegreat')
+    // Computed: hex of SHA-256("zeusthegreat")
+    var PASS_HASH = 'cd141e2302c77cdf0b123456bc19808e1967cb0f57f39d9afd1c1b7dce03aac7';
+
+    var gate   = document.getElementById('pw-gate');
+    var loader = document.getElementById('loader');
+    var ready  = document.getElementById('ready');
+    var form   = document.getElementById('pw-form');
+    var input  = document.getElementById('pw-input');
+    var err    = document.getElementById('pw-err');
+    var btnGo  = document.getElementById('rd-btn');
+    var fill   = document.getElementById('ld-fill');
+    var pctEl  = document.getElementById('ld-pct');
+    var cntEl  = document.getElementById('ld-counter');
+
+    async function sha256Hex(str) {
+      var enc = new TextEncoder().encode(str);
+      var buf = await crypto.subtle.digest('SHA-256', enc);
+      return Array.from(new Uint8Array(buf))
+        .map(function(b) { return b.toString(16).padStart(2, '0'); })
+        .join('');
+    }
+
+    function show(el) { el.classList.remove('hidden'); el.classList.add('show'); el.style.display='flex'; }
+    function hide(el) { el.classList.add('hidden'); setTimeout(function(){ el.style.display='none'; }, 520); }
+
+    async function startPreload() {
+      hide(gate);
+      show(loader);
+
+      var manifest;
+      try {
+        var res = await fetch('manifest.json', { cache: 'no-cache' });
+        manifest = await res.json();
+      } catch (e) {
+        // fallback: no manifest, skip preload
+        gotoDeck();
+        return;
+      }
+
+      var assets = manifest.assets || [];
+      var total  = assets.length;
+      var done   = 0;
+
+      cntEl.textContent = '0 / ' + total;
+
+      // Concurrency-limited loader
+      var CONCURRENCY = 8;
+      var idx = 0;
+
+      function tick() {
+        done++;
+        var pct = Math.min(100, Math.round((done / total) * 100));
+        fill.style.width = pct + '%';
+        pctEl.textContent = pct + '%';
+        cntEl.textContent = done + ' / ' + total;
+      }
+
+      function loadOne(item) {
+        return new Promise(function(resolve) {
+          // Use Image() for image types — lets browser cache + decode
+          var url = item.url;
+          var ext = (item.path.split('.').pop() || '').toLowerCase();
+          if (['png','jpg','jpeg','webp','svg','gif'].indexOf(ext) >= 0) {
+            var img = new Image();
+            img.onload = img.onerror = function() { tick(); resolve(); };
+            img.src = url;
+          } else {
+            // CSS, JS, JSX — fetch into HTTP cache
+            fetch(url, { mode: 'cors', cache: 'force-cache' })
+              .then(function(r){ return r.blob(); })
+              .catch(function(){})
+              .then(function(){ tick(); resolve(); });
+          }
+        });
+      }
+
+      async function worker() {
+        while (true) {
+          var i = idx++;
+          if (i >= assets.length) return;
+          await loadOne(assets[i]);
+        }
+      }
+
+      var workers = [];
+      for (var w = 0; w < CONCURRENCY; w++) workers.push(worker());
+      await Promise.all(workers);
+
+      // Tiny pause for the bar to hit 100% visually
+      setTimeout(showReady, 250);
+    }
+
+    function showReady() {
+      hide(loader);
+      show(ready);
+    }
+
+    function gotoDeck() {
+      sessionStorage.setItem(SESSION_KEY, 'ok');
+      window.location.replace('deck.html');
+    }
+
+    btnGo.addEventListener('click', gotoDeck);
+
+    async function tryPass() {
+      var v = (input.value || '').trim().toLowerCase();
+      if (!v) return;
+      var h = await sha256Hex(v);
+      if (h === PASS_HASH) {
+        sessionStorage.setItem(SESSION_KEY, 'ok');
+        startPreload();
+      } else {
+        err.classList.add('show');
+        input.value = '';
+        input.focus();
+        setTimeout(function() { err.classList.remove('show'); }, 2200);
+      }
+    }
+
+    form.addEventListener('submit', tryPass);
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault(); tryPass(); }
+    });
+
+    // If already authenticated this session, skip straight to deck
+    if (sessionStorage.getItem(SESSION_KEY) === 'ok') {
+      window.location.replace('deck.html');
+    }
+  })();
+  </script>
+
+</body>
+</html>
