@@ -1,0 +1,26 @@
+name: Deploy HLS Awards London
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout hls-awards-london
+        uses: actions/checkout@v4
+        with:
+          repository: newsuperdudes/hls-awards-london
+          token: ${{ secrets.GH_PAT }}
+      - name: Deploy to /london via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /london/
+          local-dir: ./
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/README.md
