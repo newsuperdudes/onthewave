@@ -1,0 +1,26 @@
+name: Deploy Corona SailGP
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout corona-sailgp
+        uses: actions/checkout@v4
+        with:
+          repository: newsuperdudes/corona-sailgp
+          token: ${{ secrets.GH_PAT }}
+      - name: Deploy to /coronasailgp via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /coronasailgp/
+          local-dir: ./
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/README.md
