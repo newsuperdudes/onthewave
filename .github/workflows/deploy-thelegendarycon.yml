@@ -1,0 +1,26 @@
+name: Deploy The Legendary Con
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout thelegendarycon
+        uses: actions/checkout@v4
+        with:
+          repository: newsuperdudes/thelegendarycon
+          token: ${{ secrets.GH_PAT }}
+      - name: Deploy to /thelegendarycon via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /thelegendarycon/
+          local-dir: ./
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/README.md
