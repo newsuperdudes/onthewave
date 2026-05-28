@@ -1,0 +1,26 @@
+name: Deploy Nebius Paris
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout nebiusparis
+        uses: actions/checkout@v4
+        with:
+          repository: newsuperdudes/nebiusparis
+          token: ${{ secrets.GH_PAT }}
+      - name: Deploy to /nebiusparis via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /nebiusparis/
+          local-dir: ./
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/README.md
