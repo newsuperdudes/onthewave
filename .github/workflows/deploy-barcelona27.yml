@@ -1,0 +1,26 @@
+name: Deploy Barcelona27
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout barcelona27
+        uses: actions/checkout@v4
+        with:
+          repository: newsuperdudes/barcelona27
+          token: ${{ secrets.GH_PAT }}
+      - name: Deploy to /barcelona27 via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /barcelona27/
+          local-dir: ./
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/README.md
