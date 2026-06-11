@@ -1,0 +1,26 @@
+name: Deploy Expo2027
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout expo2027
+        uses: actions/checkout@v4
+        with:
+          repository: newsuperdudes/expo2027
+          token: ${{ secrets.GH_PAT }}
+      - name: Deploy to /expo2027 via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /expo2027/
+          local-dir: ./
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/README.md
