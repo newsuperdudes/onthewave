@@ -18,7 +18,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /coinspaidnovember/
           local-dir: ./
-          dangerous-clean-slate: false
+          dangerous-clean-slate: true
+          timeout: 600000
           exclude: |
             **/.git*
             **/.git*/**
