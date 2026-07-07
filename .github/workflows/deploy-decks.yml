@@ -1,0 +1,60 @@
+name: Deploy Decks
+on:
+  workflow_dispatch:
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    outputs:
+      dirs: ${{ steps.list.outputs.dirs }}
+    steps:
+      - name: Checkout decks
+        uses: actions/checkout@v4
+        with:
+          repository: newsuperdudes/decks
+          token: ${{ secrets.GH_PAT }}
+      - name: List deployable folders
+        id: list
+        run: |
+          RESERVED="onthewave dublin ilclub expo2027 barcelona27 cryptogaudi coinspaidnovember nebiusprivate nebiusparis nebiustech thelegendarycon exness coronasailgp london itestimony cgi-bin"
+          DIRS=""
+          for d in */; do
+            d="${d%/}"
+            case " $RESERVED " in
+              *" $d "*) echo "SKIP reserved folder: $d" ;;
+              *)
+                if echo "$d" | grep -Eq '^[a-z0-9][a-z0-9-]*$'; then
+                  DIRS="$DIRS $d"
+                else
+                  echo "SKIP invalid folder name (lowercase a-z, 0-9, dash only): $d"
+                fi
+                ;;
+            esac
+          done
+          echo "dirs=$(printf '%s\n' $DIRS | grep -v '^$' | jq -R . | jq -s -c .)" >> "$GITHUB_OUTPUT"
+  deploy:
+    needs: list
+    if: needs.list.outputs.dirs != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dir: ${{ fromJson(needs.list.outputs.dirs) }}
+      max-parallel: 2
+      fail-fast: false
+    steps:
+      - name: Checkout decks
+        uses: actions/checkout@v4
+        with:
+          repository: newsuperdudes/decks
+          token: ${{ secrets.GH_PAT }}
+      - name: Deploy /${{ matrix.dir }} via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /${{ matrix.dir }}/
+          local-dir: ./${{ matrix.dir }}/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
