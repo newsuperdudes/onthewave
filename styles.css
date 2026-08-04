@@ -823,14 +823,14 @@ deck-stage::part(slide-counter) {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/polaroid-frame.png');
+  background-image: url('https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/assets/polaroid-frame.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   pointer-events: none;
   z-index: 1;
 }
 .polaroid:nth-child(even)::before {
-  background-image: url('https://ihlyzizdnecykfqslxge.supabase.co/storage/v1/object/public/presentation-assets/onthewave/assets/polaroid-frame-2.png');
+  background-image: url('https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/assets/polaroid-frame-2.png');
   z-index: 2; /* frame 2 has a real cutout — keep on top */
 }
 /* Photo window — sized to the frame's interior */
