@@ -79,7 +79,7 @@ html, body {
 .plaster-bg::after {
   content: "";
   position: absolute; inset: 0;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  background-image: url("noise.svg");
   opacity: 0.18;
   mix-blend-mode: multiply;
   pointer-events: none;
