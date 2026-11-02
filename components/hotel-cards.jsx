@@ -17,16 +17,16 @@ const HOTEL_CARDS = [
     statusKey: 'confirmed',
     statusLabel: '✓ Confirmed · primary',
     note: 'Leading Hotels of the World. Full buyout 276 rooms — Oct 6–9 only. Closest to ATH.',
-    bg: 'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/lagonissi/01-aerial-peninsula.png',
+    bg: 'hotel-photos/lagonissi/01-aerial-peninsula.png',
     bgScrim: 'rgba(245,239,228,0.38)',
     pinX: 62, pinY: 48,   // % within mini map silhouette
     frame: 'landscape',
     photos: [
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/lagonissi/01-aerial-peninsula.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/lagonissi/02-suite-seaview.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/lagonissi/03-terrace-sunset.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/lagonissi/04-grand-hall.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/lagonissi/05-ballroom.png',
+      'hotel-photos/lagonissi/01-aerial-peninsula.png',
+      'hotel-photos/lagonissi/02-suite-seaview.png',
+      'hotel-photos/lagonissi/03-terrace-sunset.png',
+      'hotel-photos/lagonissi/04-grand-hall.png',
+      'hotel-photos/lagonissi/05-ballroom.png',
     ],
     captions: ['PENINSULA · AERIAL', 'SUITE · SEAVIEW', 'TERRACE · SUNSET', 'GRAND HALL · ENTRANCE', 'BALLROOM · INTERIOR'],
     amenities: ['Padel', '2× floodlit tennis', 'Basketball', 'Beach volley', 'Mini-golf', 'Mini-soccer', 'Open-air cinema', 'Flyboard · diving · water-ski'],
@@ -46,16 +46,16 @@ const HOTEL_CARDS = [
     statusKey: null,
     statusLabel: '',
     note: 'Beach property on Riviera. Capacity & AI package to confirm.',
-    bg: 'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/evereden/01-pool-sea.png',
+    bg: 'hotel-photos/evereden/01-pool-sea.png',
     bgScrim: 'rgba(245,239,228,0.40)',
     pinX: 60, pinY: 53,
     frame: 'landscape',
     photos: [
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/evereden/01-pool-sea.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/evereden/02-facade-arches.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/evereden/03-terrace-lounge.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/evereden/04-suite-seaview.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/evereden/05-conference.png',
+      'hotel-photos/evereden/01-pool-sea.png',
+      'hotel-photos/evereden/02-facade-arches.png',
+      'hotel-photos/evereden/03-terrace-lounge.png',
+      'hotel-photos/evereden/04-suite-seaview.png',
+      'hotel-photos/evereden/05-conference.png',
     ],
     captions: ['POOL · SEAVIEW', 'FACADE · STONE ARCHES', 'TERRACE LOUNGE · BEACH', 'SUITE · SEAVIEW', 'CONFERENCE ROOM'],
     amenities: ['Tennis', 'Volleyball', 'Mini-golf', '5-a-side football', 'Aqua park (sea)', 'PADI diving centre', 'Water-ski · wakeboard school', '2 outdoor + 1 indoor pool'],
@@ -75,16 +75,16 @@ const HOTEL_CARDS = [
     statusKey: 'option',
     statusLabel: '◇ Combo option',
     note: 'Two adjacent properties (~7–9 km apart). 5 restaurants, 6 bars. Risk: shuttle logistics.',
-    bg: 'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/zeus/01-aerial-pools.jpg',
+    bg: 'hotel-photos/zeus/01-aerial-pools.jpg',
     bgScrim: 'rgba(245,239,228,0.40)',
     pinX: 47, pinY: 22,
     frame: 'landscape',
     photos: [
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/zeus/01-aerial-pools.jpg',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/zeus/02-firepits-sea.jpg',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/zeus/03-balcony-seaview.jpg',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/zeus/04-suite-lounge.jpg',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/zeus/05-bedroom-arch.jpg',
+      'hotel-photos/zeus/01-aerial-pools.jpg',
+      'hotel-photos/zeus/02-firepits-sea.jpg',
+      'hotel-photos/zeus/03-balcony-seaview.jpg',
+      'hotel-photos/zeus/04-suite-lounge.jpg',
+      'hotel-photos/zeus/05-bedroom-arch.jpg',
     ],
     captions: ['AERIAL · POOLS · SEA', 'FIREPITS · SEAVIEW', 'BALCONY · SEAVIEW', 'SUITE · LOUNGE', 'BEDROOM · ARCH'],
     amenities: ['1× tennis', '1× padel', '1× football', '1× basketball', 'Beach volley + volley', '7 outdoor + 1 indoor pool', 'Adventure Park · hiking · archery', 'Seaside yoga deck'],
@@ -104,16 +104,16 @@ const HOTEL_CARDS = [
     statusKey: 'option',
     statusLabel: "★ Vlad's favourite",
     note: 'Ultra AI, 8 restaurants. 351 rooms — comfortably above the ~195 we need.',
-    bg: 'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/laguna/01-pool-palace.png',
+    bg: 'hotel-photos/laguna/01-pool-palace.png',
     bgScrim: 'rgba(245,239,228,0.40)',
     pinX: 65, pinY: 86,
     frame: 'landscape',
     photos: [
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/laguna/01-pool-palace.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/laguna/03-suite-poolview.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/laguna/05-lounge-sunset.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/laguna/04-terrace-jacuzzi.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/laguna/02-spa-pool.png',
+      'hotel-photos/laguna/01-pool-palace.png',
+      'hotel-photos/laguna/03-suite-poolview.png',
+      'hotel-photos/laguna/05-lounge-sunset.png',
+      'hotel-photos/laguna/04-terrace-jacuzzi.png',
+      'hotel-photos/laguna/02-spa-pool.png',
     ],
     captions: ['POOL · PALACE FACADE', 'SUITE · POOLVIEW', 'TERRACE LOUNGE · SUNSET', 'TERRACE · JACUZZI', 'INDOOR SPA POOL'],
     amenities: ['Tennis court', 'Basketball', 'Beach volleyball', 'Water polo', 'Aqua-aerobics · aqua gym', 'Fitness centre + spa', 'Watersports on Anissaras beach', 'Indoor heated pool'],
@@ -133,16 +133,16 @@ const HOTEL_CARDS = [
     statusKey: 'option',
     statusLabel: '★ Reopens May 2026',
     note: 'Refurbished. 5 restaurants, 8 bars. 400-pax indoor theatre + 100-pax breakout.',
-    bg: 'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/rinela/01-aerial-beach.png',
+    bg: 'hotel-photos/rinela/01-aerial-beach.png',
     bgScrim: 'rgba(245,239,228,0.40)',
     pinX: 67, pinY: 85,
     frame: 'landscape',
     photos: [
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/rinela/01-aerial-beach.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/rinela/02-pool-reflection.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/rinela/03-suite-seaview.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/rinela/04-cabana-pool.png',
-      'https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/hotel-photos/rinela/05-palms-pool.png',
+      'hotel-photos/rinela/01-aerial-beach.png',
+      'hotel-photos/rinela/02-pool-reflection.png',
+      'hotel-photos/rinela/03-suite-seaview.png',
+      'hotel-photos/rinela/04-cabana-pool.png',
+      'hotel-photos/rinela/05-palms-pool.png',
     ],
     captions: ['AERIAL · BEACHFRONT SUITES', 'INFINITY POOL · REFLECTION', 'SUITE · SEAVIEW', 'PRIVATE CABANA · POOL', 'PALM AVENUE · POOL'],
     amenities: ['Tennis court', 'Football pitch', 'Basketball', 'Beach volley', 'Water polo', 'Watersports on beach', '400-pax indoor theatre', 'Mini-club + playgrounds'],
@@ -282,7 +282,7 @@ function LandscapeFrameCarousel({ photos, captions, tilt = -2.0 }) {
       </div>
 
       {/* vintage frame on top (PNG with transparency in window area) */}
-      <img src="https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/assets/frame-vintage-cream.png" alt=""
+      <img src="assets/frame-vintage-cream.png" alt=""
            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}/>
 
       {/* dots in the bottom strip */}
@@ -404,7 +404,7 @@ function PolaroidCarousel({ photos, captions, tilt = -2.4 }) {
       </div>
 
       {/* polaroid frame on top (PNG with transparency in the window area) */}
-      <img src="https://pub-9348f600a2374d408b97c01512a4a260.r2.dev/presentation-assets/onthewave/stickers/polaroid-real-frame.png" alt=""
+      <img src="stickers/polaroid-real-frame.png" alt=""
            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}/>
 
       {/* dots in the bottom strip */}
